@@ -25,7 +25,7 @@ public interface HealthService {
     Health isReport(Long id);
 
     /**
-     * 签到记录
+     * 汇报记录
      * @return
      */
     PageVO<Health> history(Long id, Integer pageNum, Integer pageSize);

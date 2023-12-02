@@ -44,7 +44,7 @@ public class SignController {
     }
 
     /**
-     * 签到记录
+     * 汇报记录
      * @return
      */
     @ApiOperation(value = "打卡记录",notes = "用户打卡上报历史记录")
