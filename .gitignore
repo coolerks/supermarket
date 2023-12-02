@@ -1,0 +1,6 @@
+xinguan-vue/
+.idea
+*.iml
+target
+
+/**/application-dev.yml

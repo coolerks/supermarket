@@ -1,0 +1,11 @@
+package com.coderman.business.mapper;
+
+
+import com.coderman.common.model.business.OutStockInfo;
+import tk.mybatis.mapper.common.Mapper;
+
+/**
+  * @Date 2023年12月 * @Version 1.0
+ **/
+public interface OutStockInfoMapper extends Mapper<OutStockInfo> {
+}
