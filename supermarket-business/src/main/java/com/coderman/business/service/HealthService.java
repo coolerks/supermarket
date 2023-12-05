@@ -12,13 +12,13 @@ import com.coderman.common.vo.system.PageVO;
 public interface HealthService {
 
     /**
-     * 每日打卡
+     * 每日汇报
      * @param healthVO
      */
     void report(HealthVO healthVO) throws BusinessException;
 
     /**
-     * 今日是否已经打卡
+     * 今日是否已经汇报
      * @param id
      * @return
      */

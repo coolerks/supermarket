@@ -12,7 +12,7 @@ import java.util.List;
  **/
 public interface HealthMapper extends Mapper<Health> {
     /**
-     * 今日是否打卡
+     * 今日是否汇报
      * @param id
      * @return
      */

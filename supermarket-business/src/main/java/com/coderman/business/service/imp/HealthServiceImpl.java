@@ -27,14 +27,14 @@ public class HealthServiceImpl implements HealthService {
     private HealthMapper healthMapper;
 
     /**
-     * 每日打卡
+     * 每日汇报
      * @param healthVO
      */
     @Override
     public void report(HealthVO healthVO) throws BusinessException {
         Health report = isReport(healthVO.getUserId());
         if(report!=null) {
-            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "今日已经打卡,无法重复打卡！");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "今日已经汇报,无法重复汇报！");
         }
         Health health = new Health();
         BeanUtils.copyProperties(healthVO,health);
@@ -43,7 +43,7 @@ public class HealthServiceImpl implements HealthService {
     }
 
     /**
-     * 今日是否已打卡
+     * 今日是否已汇报
      * @param id
      * @return
      */
