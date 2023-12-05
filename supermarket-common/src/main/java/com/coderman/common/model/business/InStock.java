@@ -15,7 +15,7 @@ public class InStock {
      * 唯一标识符。
      */
     @Id
-    private long id;
+    private Long id;
 
     /**
      * 入库单编号。
@@ -25,7 +25,7 @@ public class InStock {
     /**
      * 类型：1：捐赠，2：下拨，3：采购, 4: 退货入库。
      */
-    private int type;
+    private Integer type;
 
     /**
      * 操作人员。
@@ -45,12 +45,12 @@ public class InStock {
     /**
      * 商品总数。
      */
-    private int productNumber;
+    private Integer productNumber;
 
     /**
      * 来源的唯一标识符。
      */
-    private long supplierId;
+    private Long supplierId;
 
     /**
      * 描述信息。
@@ -60,5 +60,5 @@ public class InStock {
     /**
      * 状态 (0: 正常入库单, 1: 已进入回收, 2: 等待审核)。
      */
-    private int status;
+    private Integer status;
 }

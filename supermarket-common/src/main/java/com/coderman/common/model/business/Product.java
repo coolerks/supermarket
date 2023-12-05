@@ -15,7 +15,7 @@ public class Product {
     /**
      * 商品编号。
      */
-    private String productNum;
+    private String pNum;
 
     /**
      * 商品名称。
@@ -45,7 +45,7 @@ public class Product {
     /**
      * 排序。
      */
-    private int sort;
+    private Integer sort;
 
     /**
      * 创建时间。
@@ -60,22 +60,22 @@ public class Product {
     /**
      * 1级分类ID。
      */
-    private long oneCategoryId;
+    private Long oneCategoryId;
 
     /**
      * 2级分类ID。
      */
-    private long twoCategoryId;
+    private Long twoCategoryId;
 
     /**
      * 3级分类ID。
      */
-    private long threeCategoryId;
+    private Long threeCategoryId;
 
     /**
      * 是否删除:1商品正常,0:商品回收,2:商品审核中。
      */
-    private int status;
+    private Integer status;
 
 
 }

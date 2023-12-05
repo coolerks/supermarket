@@ -21,7 +21,7 @@ public interface OutStockService {
     PageVO<OutStockVO> findOutStockList(Integer pageNum, Integer pageSize, OutStockVO outStockVO);
 
     /**
-     * 提交商品发放单
+     * 提交商品出库单
      * @param outStockVO
      */
     void addOutStock(OutStockVO outStockVO) throws BusinessException;
@@ -33,13 +33,13 @@ public interface OutStockService {
     void remove(Long id) throws BusinessException;
 
     /**
-     * 恢复发放单
+     * 恢复出库单
      * @param id
      */
     void back(Long id) throws BusinessException;
 
     /**
-     * 发放单详情
+     * 出库单详情
      * @param id
      * @param pageNum
      * @param pageSize
@@ -48,13 +48,13 @@ public interface OutStockService {
     OutStockDetailVO detail(Long id, Integer pageNum, Integer pageSize) throws BusinessException;
 
     /**
-     * 删除发放单
+     * 删除出库单
      * @param id
      */
     void delete(Long id) throws BusinessException;
 
     /**
-     * 发放单审核
+     * 出库单审核
      * @param id
      */
     void publish(Long id) throws BusinessException;

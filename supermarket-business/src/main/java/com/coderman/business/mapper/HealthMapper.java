@@ -10,6 +10,7 @@ import java.util.List;
 /**
   * @Date 2023年12月 * @Version 1.0
  **/
+@org.apache.ibatis.annotations.Mapper
 public interface HealthMapper extends Mapper<Health> {
     /**
      * 今日是否汇报

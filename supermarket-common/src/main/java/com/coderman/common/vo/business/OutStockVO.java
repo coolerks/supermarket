@@ -29,12 +29,12 @@ public class OutStockVO {
     private Integer priority;
 
 
-    //发放的商品列表
+    //出库的商品列表
     private List<Object> products=new ArrayList<>();
 
     private String remark;
 
-    //发放单的状态
+    //出库单的状态
     private Integer status;
 
 

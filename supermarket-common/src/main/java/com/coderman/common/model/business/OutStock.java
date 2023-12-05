@@ -20,7 +20,7 @@ public class OutStock {
     /**
      * 出库类型：0:直接出库,1:审核出库。
      */
-    private int type;
+    private Integer type;
 
     /**
      * 操作人员。
@@ -35,12 +35,12 @@ public class OutStock {
     /**
      * 出库总数。
      */
-    private int productNumber;
+    private Integer productNumber;
 
     /**
      * 消费者ID。
      */
-    private long consumerId;
+    private Long consumerId;
 
     /**
      * 备注。
@@ -50,11 +50,11 @@ public class OutStock {
     /**
      * 状态:0:正常入库,1:已进入回收,2:等待审核。
      */
-    private int status;
+    private Integer status;
 
     /**
      * 紧急程度:1:不急,2:常规,3:紧急,4:特急。
      */
-    private int priority;
+    private Integer priority;
 
 }

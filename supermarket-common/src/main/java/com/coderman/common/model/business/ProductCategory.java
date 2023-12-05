@@ -24,7 +24,7 @@ public class ProductCategory {
     /**
      * 排序。
      */
-    private int sort;
+    private Integer sort;
 
     /**
      * 创建时间。
@@ -39,6 +39,6 @@ public class ProductCategory {
     /**
      * 父级分类ID。
      */
-    private long parentId;
+    private Long pid;
 
 }

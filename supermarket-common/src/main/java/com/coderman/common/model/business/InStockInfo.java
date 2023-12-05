@@ -21,12 +21,12 @@ public class InStockInfo {
     /**
      * 商品编号。
      */
-    private String productNum;
+    private String pNum;
 
     /**
      * 数量。
      */
-    private int productNumber;
+    private Integer productNumber;
 
     /**
      * 创建时间。

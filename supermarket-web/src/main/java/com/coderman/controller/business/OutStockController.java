@@ -36,11 +36,11 @@ public class OutStockController {
     private ConsumerService consumerService;
 
     /**
-     * 提交商品发放单
+     * 提交商品出库单
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "发放单申请失败", operation = "发放单申请")
-    @ApiOperation("提交发放单")
+    @ControllerEndpoint(exceptionMessage = "出库单申请失败", operation = "出库单申请")
+    @ApiOperation("提交出库单")
     @PostMapping("/addOutStock")
     @RequiresPermissions({"outStock:out"})
     public ResponseBean addOutStock(@RequestBody @Validated OutStockVO outStockVO) throws BusinessException {
@@ -66,14 +66,14 @@ public class OutStockController {
             Consumer consumer = consumerService.add(consumerVO);
             outStockVO.setConsumerId(consumer.getId());
         }
-        //提交发放单
+        //提交出库单
         outStockService.addOutStock(outStockVO);
         return ResponseBean.success();
     }
 
 
     /**
-     * 发放单列表
+     * 出库单列表
      * @param pageNum
      * @param pageSize
      * @param outStockVO
@@ -94,7 +94,7 @@ public class OutStockController {
      * @param id
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "发放单回收失败", operation = "发放单回收")
+    @ControllerEndpoint(exceptionMessage = "出库单回收失败", operation = "出库单回收")
     @ApiOperation(value = "移入回收站", notes = "移入回收站")
     @RequiresPermissions({"outStock:remove"})
     @PutMapping("/remove/{id}")
@@ -103,13 +103,13 @@ public class OutStockController {
         return ResponseBean.success();
     }
     /**
-     * 商品发放单详细
+     * 商品出库单详细
      *
      * @param id
      * @return
      */
     @RequiresPermissions({"outStock:detail"})
-    @ApiOperation(value = "发放单明细")
+    @ApiOperation(value = "出库单明细")
     @GetMapping("/detail/{id}")
     public ResponseBean detail(@PathVariable Long id,
                                @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
@@ -120,13 +120,13 @@ public class OutStockController {
 
 
     /**
-     * 删除商品发放单
+     * 删除商品出库单
      * @param id
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "发放单删除失败", operation = "发放单删除")
+    @ControllerEndpoint(exceptionMessage = "出库单删除失败", operation = "出库单删除")
     @RequiresPermissions({"outStock:delete"})
-    @ApiOperation(value = "删除商品发放单")
+    @ApiOperation(value = "删除商品出库单")
     @GetMapping("/delete/{id}")
     public ResponseBean delete(@PathVariable Long id) throws BusinessException {
         outStockService.delete(id);
@@ -135,11 +135,11 @@ public class OutStockController {
 
 
     /**
-     * 发放审核
+     * 出库审核
      * @param id
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "发放单审核失败", operation = "发放单审核")
+    @ControllerEndpoint(exceptionMessage = "出库单审核失败", operation = "出库单审核")
     @ApiOperation(value = "入库审核")
     @PutMapping("/publish/{id}")
     @RequiresPermissions({"outStock:publish"})
@@ -155,7 +155,7 @@ public class OutStockController {
      * @param id
      * @return
      */
-    @ControllerEndpoint(exceptionMessage = "发放单恢复失败", operation = "发放单恢复")
+    @ControllerEndpoint(exceptionMessage = "出库单恢复失败", operation = "出库单恢复")
     @ApiOperation(value = "恢复数据", notes = "从回收站中恢复入库单")
     @RequiresPermissions({"outStock:back"})
     @PutMapping("/back/{id}")

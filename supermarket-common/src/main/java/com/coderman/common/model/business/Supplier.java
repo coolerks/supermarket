@@ -48,7 +48,7 @@ public class Supplier {
     /**
      * 排序。
      */
-    private int sort;
+    private Integer sort;
 
     /**
      * 联系人。

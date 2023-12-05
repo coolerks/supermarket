@@ -30,9 +30,9 @@ public enum  BusinessCodeEnum implements BaseError {
     PRODUCT_WAIT_PASS(30003,"商品等待审核"),
     PRODUCT_STATUS_ERROR(30004,"商品状态错误"),
     PRODUCT_IN_STOCK_NUMBER_ERROR(30005,"商品入库数量非法"),
-    PRODUCT_OUT_STOCK_NUMBER_ERROR(30008,"商品发放数量非法"),
+    PRODUCT_OUT_STOCK_NUMBER_ERROR(30008,"商品出库数量非法"),
     PRODUCT_IN_STOCK_EMPTY(30006,"商品入库不能为空"),
-    PRODUCT_OUT_STOCK_EMPTY(30007,"商品发放不能为空"),
+    PRODUCT_OUT_STOCK_EMPTY(30007,"商品出库不能为空"),
     PRODUCT_STOCK_ERROR(30009,"商品库存不足");
     /** 错误码 */
     private int errorCode;
