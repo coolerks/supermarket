@@ -15,20 +15,44 @@ public class Supplier {
     @GeneratedValue(generator = "JDBC")
     private Long id;
 
+    /**
+     * 供应商名称。
+     */
     private String name;
 
+    /**
+     * 供应商地址。
+     */
     private String address;
 
+    /**
+     * 供应商邮箱。
+     */
     private String email;
 
+    /**
+     * 供应商电话。
+     */
     private String phone;
 
+    /**
+     * 创建时间。
+     */
     private Date createTime;
 
+    /**
+     * 修改时间。
+     */
     private Date modifiedTime;
 
-    private Integer sort;
+    /**
+     * 排序。
+     */
+    private int sort;
 
+    /**
+     * 联系人。
+     */
     private String contact;
 
 }

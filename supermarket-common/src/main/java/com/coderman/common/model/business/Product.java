@@ -12,31 +12,70 @@ public class Product {
 
     @Id
     private Long id;
+    /**
+     * 商品编号。
+     */
+    private String productNum;
 
-    private String pNum;
-
+    /**
+     * 商品名称。
+     */
     private String name;
 
-    private String model;
-
-    private String unit;
-
-    private String remark;
-
-    private Integer sort;
-
-    private Date createTime;
-
-    private Date modifiedTime;
-
-    private Long oneCategoryId;
-
-    private Long twoCategoryId;
-
-    private Long threeCategoryId;
-
+    /**
+     * 图片URL。
+     */
     private String imageUrl;
 
-    private Integer status;
+    /**
+     * 规格型号。
+     */
+    private String model;
+
+    /**
+     * 计算单位。
+     */
+    private String unit;
+
+    /**
+     * 备注。
+     */
+    private String remark;
+
+    /**
+     * 排序。
+     */
+    private int sort;
+
+    /**
+     * 创建时间。
+     */
+    private Date createTime;
+
+    /**
+     * 修改时间。
+     */
+    private Date modifiedTime;
+
+    /**
+     * 1级分类ID。
+     */
+    private long oneCategoryId;
+
+    /**
+     * 2级分类ID。
+     */
+    private long twoCategoryId;
+
+    /**
+     * 3级分类ID。
+     */
+    private long threeCategoryId;
+
+    /**
+     * 是否删除:1商品正常,0:商品回收,2:商品审核中。
+     */
+    private int status;
+
 
 }

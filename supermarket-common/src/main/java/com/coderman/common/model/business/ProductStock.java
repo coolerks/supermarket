@@ -14,8 +14,14 @@ public class ProductStock {
     @Id
     private Long id;
 
+    /**
+     * 业务主键
+     */
     private String pNum;
 
+    /**
+     * 剩余库存
+     */
     private Long stock;
 
 }

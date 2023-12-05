@@ -14,8 +14,14 @@ public class Log {
     @Id
     private Long id;
 
+    /**
+     * 用户
+     */
     private String username;
 
+    /**
+     * 耗时
+     */
     private Long time;
 
     private String ip;
@@ -23,11 +29,23 @@ public class Log {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
+    /**
+     * 地区
+     */
     private String location;
 
+    /**
+     * 操作内容
+     */
     private String operation;
 
+    /**
+     * 处理方法-全类名
+     */
     private String method;
 
+    /**
+     * 方法参数
+     */
     private String params;
 }

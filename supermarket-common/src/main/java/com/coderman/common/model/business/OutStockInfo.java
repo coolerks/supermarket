@@ -13,14 +13,29 @@ public class OutStockInfo {
     @Id
     private Long id;
 
+    /**
+     * 出库单号。
+     */
     private String outNum;
 
-    private String pNum;
+    /**
+     * 商品编号。
+     */
+    private String productNum;
 
-    private Integer productNumber;
+    /**
+     * 数量。
+     */
+    private int productNumber;
 
+    /**
+     * 创建时间。
+     */
     private Date createTime;
 
+    /**
+     * 修改时间。
+     */
     private Date modifiedTime;
 
 }

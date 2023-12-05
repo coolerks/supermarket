@@ -18,12 +18,24 @@ public class Health {
 
     private Long userId;
 
+    /**
+     * 超市情况
+     */
     private Integer situation;
 
+    /**
+     * 有无送货人员
+     */
     private Integer touch;
 
+    /**
+     * 是否缺货
+     */
     private Integer passby;
 
+    /**
+     * 卫生情况
+     */
     private Integer reception;
 
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")

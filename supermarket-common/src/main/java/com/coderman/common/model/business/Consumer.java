@@ -15,9 +15,16 @@ public class Consumer {
     @GeneratedValue(generator = "JDBC")
     private Long id;
 
+    /**
+     * 商品消费方
+     */
     private String name;
 
+    /**
+     * 地址
+     */
     private String address;
+
 
     private Date createTime;
 
@@ -25,7 +32,13 @@ public class Consumer {
 
     private String phone;
 
+    /**
+     * 排序
+     */
     private  Integer sort;
 
+    /**
+     * 联系人姓名
+     */
     private String contact;
 }

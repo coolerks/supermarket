@@ -20,8 +20,14 @@ public class LoginLog {
 
     private String ip;
 
+    /**
+     * 操作系统
+     */
     private String userSystem;
 
+    /**
+     * 浏览器
+     */
     private String userBrowser;
 
 }
