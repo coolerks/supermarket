@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 系统日志
- * Created by zhangyukang on 2019/11/15 17:26
+ * Created by SongXiaoxu on 2019/11/15 17:26
  */
 public interface LogService  {
 

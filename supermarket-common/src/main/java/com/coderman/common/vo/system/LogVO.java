@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 /**
- * Created by zhangyukang on 2019/11/15 17:29
+ * Created by SongXiaoxu on 2019/11/15 17:29
  */
 @Data
 public class LogVO {

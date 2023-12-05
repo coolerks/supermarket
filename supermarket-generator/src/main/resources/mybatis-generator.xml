@@ -12,7 +12,7 @@
 		<!-- 配置数据库连接 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
 			connectionURL="jdbc:mysql://127.0.0.1:3306/xinguan" userId="root"
-			password="zhangyukang">
+			password="SongXiaoxu">
 			<property name="serverTimezone" value="UTC"/>
 		</jdbcConnection>
 

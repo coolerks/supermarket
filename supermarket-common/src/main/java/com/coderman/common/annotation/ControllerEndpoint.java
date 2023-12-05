@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 
 /**
  * 自定义注解,用于标注在controller的方法上,异步记录日志
- * create by zhangyukang
+ * create by SongXiaoxu
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

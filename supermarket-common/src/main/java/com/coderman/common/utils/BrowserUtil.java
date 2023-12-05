@@ -3,7 +3,7 @@ package com.coderman.common.utils;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by zhangyukang on 2019/11/10 15:50
+ * Created by SongXiaoxu on 2019/11/10 15:50
  */
 public class BrowserUtil {
     /**
