@@ -11,8 +11,8 @@ import tk.mybatis.spring.annotation.MapperScan;
 @SpringBootApplication()
 @EnableTransactionManagement  //开启事务管理
 @MapperScan("com.coderman.*.mapper") //扫描mapper
-public class XinguanApplication {
+public class SupermarketApplication {
     public static void main(String[] args) {
-        SpringApplication.run(XinguanApplication.class,args);
+        SpringApplication.run(SupermarketApplication.class,args);
     }
 }
