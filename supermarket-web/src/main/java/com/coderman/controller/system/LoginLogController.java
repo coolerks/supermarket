@@ -2,6 +2,7 @@ package com.coderman.controller.system;
 
 import com.coderman.common.annotation.ControllerEndpoint;
 import com.coderman.common.error.SystemException;
+import com.coderman.common.response.ActiveUser;
 import com.coderman.common.response.ResponseBean;
 import com.coderman.common.vo.system.LoginLogVO;
 import com.coderman.common.vo.system.PageVO;
@@ -9,6 +10,7 @@ import com.coderman.common.vo.system.UserVO;
 import com.coderman.system.service.LoginLogService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +23,7 @@ import java.util.Map;
 /**
  * 登入日志
  *
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "系统模块-登入日志相关接口")
 @RestController
@@ -85,19 +87,28 @@ public class LoginLogController {
 
     /**
      * 登入报表
+     *
      * @return
      */
     @PostMapping("/loginReport")
-    @ApiOperation(value = "登入报表",notes = "用户登入报表")
-    public ResponseBean loginReport(@RequestBody UserVO userVO){
-        List<Map<String,Object>> mapList= loginLogService.loginReport(userVO);
-        Map<String,Object> map=new HashMap<>();
+    @ApiOperation(value = "登入报表", notes = "用户登入报表")
+    public ResponseBean loginReport(@RequestBody UserVO userVO) {
+        List<Map<String, Object>> mapList = loginLogService.loginReport(userVO);
+        Map<String, Object> map = new HashMap<>();
         userVO.setUsername(null);
-        List<Map<String,Object>> meList= loginLogService.loginReport(userVO);
-        map.put("me",mapList);
-        map.put("all",meList);
+        List<Map<String, Object>> meList = loginLogService.loginReport(userVO);
+        map.put("me", mapList);
+        map.put("all", meList);
         return ResponseBean.success(map);
     }
 
-
+    @GetMapping("/count")
+    @ApiOperation(value = "登录次数", notes = "用户登入次数")
+    public ResponseBean count() {
+        ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
+        List<Map<String, Object>> mapList = loginLogService.loginReport(new UserVO() {{
+            setUsername(activeUser.getUsername());
+        }});
+        return ResponseBean.success(mapList);
+    }
 }
