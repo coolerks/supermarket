@@ -33,10 +33,6 @@ import java.util.Date;
 @Component
 public class ControllerEndpointAspect extends AspectSupport {
 
-    private Log sysLog=new Log();
-
-    private long startTime;
-
 
     @Autowired
     private LogService logService;
@@ -47,19 +43,21 @@ public class ControllerEndpointAspect extends AspectSupport {
 
     /**
      * 环绕通知
+     *
      * @param joinPoint
      */
     @Around("pointcut()")
     public Object saveSysLog(ProceedingJoinPoint joinPoint) throws Throwable {
-        Object result=null;
+        Log sysLog = new Log();
+        Object result = null;
         //开始时间
-        startTime=System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
 
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
         //获取注解
         ControllerEndpoint controllerEndpoint = method.getAnnotation(ControllerEndpoint.class);
-        if(controllerEndpoint!=null){
+        if (controllerEndpoint != null) {
             String operation = controllerEndpoint.operation();
             //注解上的操作描述
             sysLog.setOperation(operation);
@@ -69,28 +67,28 @@ public class ControllerEndpointAspect extends AspectSupport {
         Object[] args = joinPoint.getArgs();
         LocalVariableTableParameterNameDiscoverer u = new LocalVariableTableParameterNameDiscoverer();
         String[] paramNames = u.getParameterNames(method);
-        sysLog.setParams("paramName:"+ Arrays.toString(paramNames) +",args:"+ Arrays.toString(args));
+        sysLog.setParams("paramName:" + Arrays.toString(paramNames) + ",args:" + Arrays.toString(args));
 
         //请求的IP
-        HttpServletRequest request =((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String ipAddr = IPUtil.getIpAddr(request);
         sysLog.setIp(ipAddr);
         //地理位置
         sysLog.setLocation(AddressUtil.getCityInfo(ipAddr));
         //操作人
-        ActiveUser activeUser= (ActiveUser) SecurityUtils.getSubject().getPrincipal();
+        ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
         sysLog.setUsername(activeUser.getUser().getUsername());
         //添加时间
         sysLog.setCreateTime(new Date());
         //执行目标方法
-        result=joinPoint.proceed();
+        result = joinPoint.proceed();
         //请求的方法名
         String className = joinPoint.getTarget().getClass().getName();
         String methodName = signature.getName();
         sysLog.setMethod(className + "." + methodName + "()\n"
-                +"\nresponse:"+postHandle(result));
+                + "\nresponse:" + postHandle(result));
         //执行耗时
-        sysLog.setTime(System.currentTimeMillis()-startTime);
+        sysLog.setTime(System.currentTimeMillis() - startTime);
         //保存系统日志
         logService.saveLog(sysLog);
 
@@ -99,11 +97,12 @@ public class ControllerEndpointAspect extends AspectSupport {
 
     /**
      * 返回数据
+     *
      * @param retVal
      * @return
      */
     private String postHandle(Object retVal) {
-        if(null == retVal){
+        if (null == retVal) {
             return "";
         }
         return JSON.toJSONString(retVal);

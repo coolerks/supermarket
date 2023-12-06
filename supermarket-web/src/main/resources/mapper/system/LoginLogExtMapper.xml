@@ -4,23 +4,25 @@
 
   <select id="userLoginReport" resultType="map"
           parameterType="com.coderman.common.vo.system.UserVO">
-    select
-    date_format(l.login_time, '%m-%d') days,
-    count(1) count
-    from
-    (
-    select
-    *
-    from
-    tb_login_log
-    where
-    date_sub(curdate(), interval 20 day) &lt; date(login_time)
-    ) as l where 1 = 1
-    <if test="username != null and username != ''">
-      and l.username = #{username}
-    </if>
-    group by
-    days
+      select
+      date_format(l.login_time, '%m-%d') days,
+      count(1) count
+      from
+      (
+      select
+      *
+      from
+      tb_login_log
+      where
+      date_sub(curdate(), interval 20 day) &lt; date(login_time)
+      ) as l
+      <where>
+          <if test="username != null and username != ''">
+              l.username = #{username}
+          </if>
+      </where>
+      group by
+      days
   </select>
 
 
