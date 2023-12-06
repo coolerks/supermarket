@@ -9,29 +9,33 @@ import com.coderman.common.vo.system.MenuVO;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public interface MenuService {
     /**
      * 获取菜单树
+     *
      * @return
      */
     List<MenuNodeVO> findMenuTree();
 
     /**
      * 添加菜单
+     *
      * @param menuVO
      */
     Menu add(MenuVO menuVO);
 
     /**
      * 删除节点
+     *
      * @param id
      */
     void delete(Long id) throws SystemException;
 
     /**
      * 编辑节点
+     *
      * @param id
      * @return
      */
@@ -39,12 +43,14 @@ public interface MenuService {
 
     /**
      * 更新节点
+     *
      * @param id
      */
     void update(Long id, MenuVO menuVO) throws SystemException;
 
     /**
      * 所有展开菜单的ID
+     *
      * @return
      */
     List<Long> findOpenIds();
@@ -52,6 +58,7 @@ public interface MenuService {
 
     /**
      * 获取所有菜单
+     *
      * @return
      */
     List<Menu> findAll();

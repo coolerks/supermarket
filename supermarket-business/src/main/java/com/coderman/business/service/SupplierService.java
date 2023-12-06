@@ -8,12 +8,13 @@ import com.coderman.common.vo.system.PageVO;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public interface SupplierService {
 
     /**
      * 添加供应商
+     *
      * @param supplierVO
      */
     Supplier add(SupplierVO supplierVO);
@@ -21,6 +22,7 @@ public interface SupplierService {
 
     /**
      * 供应商列表
+     *
      * @param pageNum
      * @param pageSize
      * @param supplierVO
@@ -31,6 +33,7 @@ public interface SupplierService {
 
     /**
      * 编辑供应商
+     *
      * @param id
      * @return
      */
@@ -38,6 +41,7 @@ public interface SupplierService {
 
     /**
      * 更新供应商
+     *
      * @param id
      * @param supplierVO
      */
@@ -45,12 +49,14 @@ public interface SupplierService {
 
     /**
      * 删除供应商
+     *
      * @param id
      */
     void delete(Long id);
 
     /**
      * 查询所有供应商
+     *
      * @return
      */
     List<SupplierVO> findAll();

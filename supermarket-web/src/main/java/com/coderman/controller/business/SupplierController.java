@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 来源管理
  *
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "业务模块-商品来源相关接口")
 @RestController

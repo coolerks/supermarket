@@ -22,13 +22,12 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.constraints.NotBlank;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 
 @RestController
@@ -55,11 +54,10 @@ public class UserController {
     @ApiOperation(value = "用户登入", notes = "接收参数用户名和密码,登入成功后,返回JWTToken")
     @PostMapping("/login")
     public ResponseBean<String> login(@RequestBody UserLoginDTO userLoginDTO, HttpServletRequest request) throws SystemException {
-        String token=userService.login(userLoginDTO.getUsername(),userLoginDTO.getPassword());
+        String token = userService.login(userLoginDTO.getUsername(), userLoginDTO.getPassword());
         loginLogService.add(request);
         return ResponseBean.success(token);
     }
-
 
 
     /**
@@ -70,8 +68,8 @@ public class UserController {
     @ApiOperation(value = "用户列表", notes = "模糊查询用户列表")
     @GetMapping("/findUserList")
     public ResponseBean<PageVO<UserVO>> findUserList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                                     @RequestParam(value = "pageSize", defaultValue = "7") Integer pageSize,
-                                     UserVO userVO) {
+                                                     @RequestParam(value = "pageSize", defaultValue = "7") Integer pageSize,
+                                                     UserVO userVO) {
         PageVO<UserVO> userList = userService.findUserList(pageNum, pageSize, userVO);
         return ResponseBean.success(userList);
     }
@@ -84,7 +82,7 @@ public class UserController {
     @ApiOperation(value = "用户信息", notes = "用户登入信息")
     @GetMapping("/info")
     public ResponseBean<UserInfoVO> info() throws SystemException {
-        UserInfoVO userInfoVO=userService.info();
+        UserInfoVO userInfoVO = userService.info();
         return ResponseBean.success(userInfoVO);
     }
 
@@ -165,6 +163,7 @@ public class UserController {
 
     /**
      * 编辑用户
+     *
      * @param id
      * @return
      */
@@ -178,6 +177,7 @@ public class UserController {
 
     /**
      * 添加用户信息
+     *
      * @param userVO
      * @return
      */
@@ -192,6 +192,7 @@ public class UserController {
 
     /**
      * 用户角色信息
+     *
      * @param id
      * @return
      */
@@ -210,12 +211,13 @@ public class UserController {
 
     /**
      * 导出excel
+     *
      * @param response
      */
     @ApiOperation(value = "导出excel", notes = "导出所有用户的excel表格")
     @PostMapping("/excel")
     @RequiresPermissions("user:export")
-    @ControllerEndpoint(exceptionMessage = "导出Excel失败",operation = "导出用户excel")
+    @ControllerEndpoint(exceptionMessage = "导出Excel失败", operation = "导出用户excel")
     public void export(HttpServletResponse response) {
         List<User> users = this.userService.findAll();
         ExcelKit.$Export(User.class, response).downXlsx(users, false);

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 public class OutStockDetailVO {
@@ -21,8 +21,11 @@ public class OutStockDetailVO {
 
     private ConsumerVO consumerVO;
 
-    private long total;/** 总数**/
+    private long total;
+    /**
+     * 总数
+     **/
 
-    private List<OutStockItemVO> itemVOS=new ArrayList<>();
+    private List<OutStockItemVO> itemVOS = new ArrayList<>();
 
 }

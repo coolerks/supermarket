@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 public class ProductCategoryTreeNodeVO {
@@ -35,9 +35,9 @@ public class ProductCategoryTreeNodeVO {
     /*
      * 排序,根据order排序
      */
-    public static Comparator<ProductCategoryTreeNodeVO> order(){
+    public static Comparator<ProductCategoryTreeNodeVO> order() {
         Comparator<ProductCategoryTreeNodeVO> comparator = (o1, o2) -> {
-            if(o1.getSort() != o2.getSort()){
+            if (o1.getSort() != o2.getSort()) {
                 return (int) (o1.getSort() - o2.getSort());
             }
             return 0;

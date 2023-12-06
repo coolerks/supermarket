@@ -21,7 +21,8 @@ import java.util.List;
 
 /**
  * 文件上传
-  * @Date 2023年12月 * @Version 1.0
+ *
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Slf4j
 @Api(tags = "系统模块-文件上传相关接口")
@@ -30,12 +31,12 @@ import java.util.List;
 public class UploadController {
 
 
-
     @Autowired
     private UploadService uploadService;
 
     /**
      * 上传图片文件
+     *
      * @param file
      * @return
      */
@@ -43,7 +44,7 @@ public class UploadController {
     @RequiresPermissions({"upload:image"})
     @PostMapping("/image")
     public ResponseBean<String> uploadImage(MultipartFile file) throws IOException, SystemException {
-        String realPath=uploadService.uploadImage(file);
+        String realPath = uploadService.uploadImage(file);
         return ResponseBean.success(realPath);
     }
 
@@ -56,16 +57,17 @@ public class UploadController {
     @ApiOperation(value = "附件列表", notes = "模糊查询附件列表")
     @GetMapping("/findImageList")
     public ResponseBean<PageInfo<ImageAttachment>> findImageList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                                     @RequestParam(value = "pageSize", defaultValue = "8") Integer pageSize,
-                                      ImageAttachmentVO imageAttachmentVO) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<ImageAttachment> imageAttachmentVOList=uploadService.findImageList(imageAttachmentVO);
+                                                                 @RequestParam(value = "pageSize", defaultValue = "8") Integer pageSize,
+                                                                 ImageAttachmentVO imageAttachmentVO) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<ImageAttachment> imageAttachmentVOList = uploadService.findImageList(imageAttachmentVO);
         PageInfo<ImageAttachment> pageInfo = new PageInfo<>(imageAttachmentVOList);
         return ResponseBean.success(pageInfo);
     }
 
     /**
      * 删除图片
+     *
      * @param id
      * @return
      */

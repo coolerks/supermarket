@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 public class MenuNodeVO {
@@ -18,7 +18,7 @@ public class MenuNodeVO {
 
     private String menuName;
 
-    private String url=null;
+    private String url = null;
 
     private String icon;
 
@@ -33,14 +33,14 @@ public class MenuNodeVO {
     private Integer type;
 
 
-    private List<MenuNodeVO> children=new ArrayList<>();
+    private List<MenuNodeVO> children = new ArrayList<>();
 
     /*
      * 排序,根据order排序
      */
-    public static Comparator<MenuNodeVO> order(){
+    public static Comparator<MenuNodeVO> order() {
         Comparator<MenuNodeVO> comparator = (o1, o2) -> {
-            if(o1.getOrderNum() != o2.getOrderNum()){
+            if (o1.getOrderNum() != o2.getOrderNum()) {
                 return (int) (o1.getOrderNum() - o2.getOrderNum());
             }
             return 0;

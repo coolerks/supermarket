@@ -1,7 +1,6 @@
 package com.coderman.common.utils;
 
 
-
 import com.coderman.common.properties.ObjectStorage;
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;
@@ -13,10 +12,10 @@ import com.qcloud.cos.region.Region;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
@@ -24,7 +23,7 @@ import java.util.UUID;
 
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Component
 public class FileUtil {
@@ -34,7 +33,8 @@ public class FileUtil {
 
 
     /**
-     *	MultipartFile类型的文件上传ַ
+     * MultipartFile类型的文件上传ַ
+     *
      * @param file
      * @return
      * @throws IOException
@@ -46,14 +46,14 @@ public class FileUtil {
     }
 
 
-
     /**
      * 返回文件上传成功后的地址名称ַ
+     *
      * @param storePath
      * @return
      */
     private String getResAccessUrl(String storePath) {
-       return  objectStorage.getDomain() + storePath;
+        return objectStorage.getDomain() + storePath;
     }
 
     public String upfileImage(InputStream is, long size, String fileExtName, Object metaData) {

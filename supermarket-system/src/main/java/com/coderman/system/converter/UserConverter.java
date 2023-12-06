@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Component
 public class UserConverter {
@@ -23,12 +23,13 @@ public class UserConverter {
 
     /**
      * 转voList
+     *
      * @param users
      * @return
      */
-    public  List<UserVO> converterToUserVOList(List<User> users){
-        List<UserVO> userVOS=new ArrayList<>();
-        if(!CollectionUtils.isEmpty(users)){
+    public List<UserVO> converterToUserVOList(List<User> users) {
+        List<UserVO> userVOS = new ArrayList<>();
+        if (!CollectionUtils.isEmpty(users)) {
             for (User user : users) {
                 UserVO userVO = converterToUserVO(user);
                 userVOS.add(userVO);
@@ -39,14 +40,15 @@ public class UserConverter {
 
     /**
      * 转vo
+     *
      * @return
      */
-    public  UserVO converterToUserVO(User user){
+    public UserVO converterToUserVO(User user) {
         UserVO userVO = new UserVO();
-        BeanUtils.copyProperties(user,userVO);
+        BeanUtils.copyProperties(user, userVO);
         userVO.setStatus(user.getStatus() == 0);
         Department department = departmentMapper.selectByPrimaryKey(user.getDepartmentId());
-        if(department!=null&&department.getName()!=null){
+        if (department != null && department.getName() != null) {
             userVO.setDepartmentName(department.getName());
             userVO.setDepartmentId(department.getId());
         }

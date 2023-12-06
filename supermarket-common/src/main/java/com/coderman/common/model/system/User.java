@@ -33,14 +33,14 @@ public class User {
     @ExcelField(value = "创建时间", dateFormat = "yyyy年MM月dd日 HH:mm:ss", width = 180)
     private Date createTime;
 
-    @ExcelField(value = "修改时间", dateFormat = "yyyy年MM月dd日 HH:mm:ss",width = 180)
+    @ExcelField(value = "修改时间", dateFormat = "yyyy年MM月dd日 HH:mm:ss", width = 180)
     private Date modifiedTime;
 
     @ExcelField(//
             value = "性别",
             readConverterExp = "男=1,女=0",
             writeConverterExp = "1=男,0=女"
-            ,width = 50
+            , width = 50
     )
     private Integer sex;
 
@@ -51,14 +51,14 @@ public class User {
             value = "用户类型",
             readConverterExp = "超级管理员=0,普通用户=1",
             writeConverterExp = "0=超级管理员,1=普通用户"
-            ,width = 80
+            , width = 80
     )
     private Integer type;
 
     @ExcelField(value = "用户密码", width = 100)
     private String password;
 
-    @ExcelField(value = "出生日期", dateFormat = "yyyy/MM/dd",width = 100)
+    @ExcelField(value = "出生日期", dateFormat = "yyyy/MM/dd", width = 100)
     private Date birth;
 
     private Long departmentId;

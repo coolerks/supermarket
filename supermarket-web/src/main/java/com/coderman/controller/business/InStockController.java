@@ -20,7 +20,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "业务模块-商品入库相关接口")
 @RestController
@@ -54,6 +54,7 @@ public class InStockController {
 
     /**
      * 商品入库
+     *
      * @param inStockVO
      * @return
      */
@@ -62,27 +63,27 @@ public class InStockController {
     @PostMapping("/addIntoStock")
     @RequiresPermissions({"inStock:in"})
     public ResponseBean addIntoStock(@RequestBody @Validated InStockVO inStockVO) throws BusinessException {
-        if(inStockVO.getSupplierId()==null){
+        if (inStockVO.getSupplierId() == null) {
             //说明现在添加商品来源
             SupplierVO supplierVO = new SupplierVO();
-            BeanUtils.copyProperties(inStockVO,supplierVO);
-            if("".equals(supplierVO.getName())||supplierVO.getName()==null){
-                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"商品提供方名不能为空");
+            BeanUtils.copyProperties(inStockVO, supplierVO);
+            if ("".equals(supplierVO.getName()) || supplierVO.getName() == null) {
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "商品提供方名不能为空");
             }
-            if("".equals(supplierVO.getEmail())||supplierVO.getEmail()==null){
-                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"邮箱不能为空");
+            if ("".equals(supplierVO.getEmail()) || supplierVO.getEmail() == null) {
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "邮箱不能为空");
             }
-            if("".equals(supplierVO.getContact())||supplierVO.getContact()==null){
-                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"联系人不能为空");
+            if ("".equals(supplierVO.getContact()) || supplierVO.getContact() == null) {
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "联系人不能为空");
             }
-            if("".equals(supplierVO.getAddress())||supplierVO.getAddress()==null){
-                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"地址不能为空");
+            if ("".equals(supplierVO.getAddress()) || supplierVO.getAddress() == null) {
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "地址不能为空");
             }
-            if("".equals(supplierVO.getPhone())||supplierVO.getPhone()==null){
-                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"联系方式不能为空");
+            if ("".equals(supplierVO.getPhone()) || supplierVO.getPhone() == null) {
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "联系方式不能为空");
             }
-            if(supplierVO.getSort()==null){
-                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"排序不能为空");
+            if (supplierVO.getSort() == null) {
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "排序不能为空");
             }
             Supplier supplier = supplierService.add(supplierVO);
             inStockVO.setSupplierId(supplier.getId());
@@ -90,8 +91,10 @@ public class InStockController {
         inStockService.addIntoStock(inStockVO);
         return ResponseBean.success();
     }
+
     /**
      * 入库审核
+     *
      * @param id
      * @return
      */
@@ -115,12 +118,14 @@ public class InStockController {
     @GetMapping("/detail/{id}")
     public ResponseBean detail(@PathVariable Long id,
                                @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                               @RequestParam(value = "pageSize",defaultValue = "3") Integer pageSize) throws BusinessException {
-        InStockDetailVO detail = inStockService.detail(id,pageNum,pageSize);
+                               @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize) throws BusinessException {
+        InStockDetailVO detail = inStockService.detail(id, pageNum, pageSize);
         return ResponseBean.success(detail);
     }
+
     /**
      * 删除商品入库单
+     *
      * @param id
      * @return
      */
@@ -135,6 +140,7 @@ public class InStockController {
 
     /**
      * 移入回收站
+     *
      * @param id
      * @return
      */
@@ -149,6 +155,7 @@ public class InStockController {
 
     /**
      * 恢复数据从回收站
+     *
      * @param id
      * @return
      */

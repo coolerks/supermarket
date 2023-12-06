@@ -17,7 +17,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "业务模块-汇报上报相关接口")
 @RestController
@@ -29,11 +29,12 @@ public class SignController {
 
     /**
      * 每日汇报
+     *
      * @param healthVO
      * @return
      */
     @ControllerEndpoint(exceptionMessage = "汇报上报失败", operation = "每日汇报")
-    @ApiOperation(value = "每日汇报",notes = "用户汇报上报")
+    @ApiOperation(value = "每日汇报", notes = "用户汇报上报")
     @RequiresPermissions({"health:report"})
     @PostMapping("/report")
     public ResponseBean report(@Validated @RequestBody HealthVO healthVO) throws BusinessException {
@@ -45,25 +46,27 @@ public class SignController {
 
     /**
      * 汇报记录
+     *
      * @return
      */
-    @ApiOperation(value = "汇报记录",notes = "用户汇报上报历史记录")
+    @ApiOperation(value = "汇报记录", notes = "用户汇报上报历史记录")
     @GetMapping("/history")
     public ResponseBean history(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                                @RequestParam(value = "pageSize") Integer pageSize){
-        ActiveUser activeUser= (ActiveUser) SecurityUtils.getSubject().getPrincipal();
+                                @RequestParam(value = "pageSize") Integer pageSize) {
+        ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
         Long id = activeUser.getUser().getId();
-        PageVO<Health> Health=healthService.history(id,pageNum,pageSize);
+        PageVO<Health> Health = healthService.history(id, pageNum, pageSize);
         return ResponseBean.success(Health);
     }
 
     /**
      * 今日是否已汇报
+     *
      * @return
      */
-    @ApiOperation(value = "是否汇报",notes = "今日是否已汇报")
+    @ApiOperation(value = "是否汇报", notes = "今日是否已汇报")
     @GetMapping("/isReport")
-    public ResponseBean isReport(){
+    public ResponseBean isReport() {
         ActiveUser activeUser = (ActiveUser) SecurityUtils.getSubject().getPrincipal();
         Health report = healthService.isReport(activeUser.getUser().getId());
         return ResponseBean.success(report);

@@ -9,7 +9,7 @@ import com.coderman.common.vo.system.*;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public interface UserService {
 
@@ -19,7 +19,7 @@ public interface UserService {
      * @param name 用户名
      * @return
      */
-     User findUserByName(String name);
+    User findUserByName(String name);
 
     /**
      * 查询用户角色
@@ -27,7 +27,7 @@ public interface UserService {
      * @param id 用户id
      * @return
      */
-     List<Role> findRolesById(Long id) throws SystemException;
+    List<Role> findRolesById(Long id) throws SystemException;
 
     /**
      * 根据用户角色查询用户的菜单
@@ -47,6 +47,7 @@ public interface UserService {
 
     /**
      * 用户列表
+     *
      * @param userVO
      * @return
      */
@@ -69,6 +70,7 @@ public interface UserService {
 
     /**
      * 添加用户
+     *
      * @param userVO
      */
     void add(UserVO userVO) throws SystemException;

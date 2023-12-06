@@ -7,12 +7,13 @@ import com.coderman.common.vo.business.InStockVO;
 import com.coderman.common.vo.system.PageVO;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public interface InStockService {
 
     /**
      * 入库单列表
+     *
      * @param pageNum
      * @param pageSize
      * @param inStockVO
@@ -23,6 +24,7 @@ public interface InStockService {
 
     /**
      * 入库单明细
+     *
      * @param id
      * @return
      */
@@ -30,30 +32,35 @@ public interface InStockService {
 
     /**
      * 删除入库单
+     *
      * @param id
      */
     void delete(Long id) throws BusinessException;
 
     /**
      * 商品入库
+     *
      * @param inStockVO
      */
     void addIntoStock(InStockVO inStockVO) throws BusinessException;
 
     /**
      * 移入回收站
+     *
      * @param id
      */
     void remove(Long id) throws BusinessException;
 
     /**
      * 还原从回收站中
+     *
      * @param id
      */
     void back(Long id) throws BusinessException;
 
     /**
      * 入库审核
+     *
      * @param id
      */
     void publish(Long id) throws BusinessException;

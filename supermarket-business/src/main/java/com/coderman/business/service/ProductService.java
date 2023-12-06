@@ -9,12 +9,13 @@ import com.coderman.common.vo.system.PageVO;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public interface ProductService {
 
     /**
      * 添加商品
+     *
      * @param productVO
      */
     void add(ProductVO productVO);
@@ -22,6 +23,7 @@ public interface ProductService {
 
     /**
      * 商品列表
+     *
      * @param pageNum
      * @param pageSize
      * @param productVO
@@ -32,6 +34,7 @@ public interface ProductService {
 
     /**
      * 编辑商品
+     *
      * @param id
      * @return
      */
@@ -39,6 +42,7 @@ public interface ProductService {
 
     /**
      * 更新商品
+     *
      * @param id
      * @param productVO
      */
@@ -46,12 +50,14 @@ public interface ProductService {
 
     /**
      * 删除商品
+     *
      * @param id
      */
     void delete(Long id) throws BusinessException;
 
     /**
      * 库存列表
+     *
      * @param pageNum
      * @param pageSize
      * @param productVO
@@ -61,24 +67,28 @@ public interface ProductService {
 
     /**
      * 所有库存信息
+     *
      * @return
      */
     List<ProductStockVO> findAllStocks(Integer pageNum, Integer pageSize, ProductVO productVO);
 
     /**
      * 移入回收站
+     *
      * @param id
      */
     void remove(Long id) throws BusinessException;
 
     /**
      * 从回收站恢复数据
+     *
      * @param id
      */
     void back(Long id) throws BusinessException;
 
     /**
      * 商品添加审核
+     *
      * @param id
      */
     void publish(Long id) throws BusinessException;

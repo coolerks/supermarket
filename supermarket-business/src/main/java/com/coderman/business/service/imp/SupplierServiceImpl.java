@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Service
 public class SupplierServiceImpl implements SupplierService {
@@ -28,6 +28,7 @@ public class SupplierServiceImpl implements SupplierService {
 
     /**
      * 供应商列表
+     *
      * @param pageNum
      * @param pageSize
      * @param supplierVO
@@ -49,21 +50,21 @@ public class SupplierServiceImpl implements SupplierService {
             criteria.andLike("address", "%" + supplierVO.getAddress() + "%");
         }
         List<Supplier> suppliers = supplierMapper.selectByExample(o);
-        List<SupplierVO> categoryVOS= SupplierConverter.converterToVOList(suppliers);
+        List<SupplierVO> categoryVOS = SupplierConverter.converterToVOList(suppliers);
         PageInfo<Supplier> info = new PageInfo<>(suppliers);
         return new PageVO<>(info.getTotal(), categoryVOS);
     }
 
 
-
     /**
      * 添加供应商
+     *
      * @param SupplierVO
      */
     @Override
     public Supplier add(SupplierVO SupplierVO) {
         Supplier supplier = new Supplier();
-        BeanUtils.copyProperties(SupplierVO,supplier);
+        BeanUtils.copyProperties(SupplierVO, supplier);
         supplier.setCreateTime(new Date());
         supplier.setModifiedTime(new Date());
         supplierMapper.insert(supplier);
@@ -72,6 +73,7 @@ public class SupplierServiceImpl implements SupplierService {
 
     /**
      * 编辑供应商
+     *
      * @param id
      * @return
      */
@@ -83,19 +85,21 @@ public class SupplierServiceImpl implements SupplierService {
 
     /**
      * 更新供应商
+     *
      * @param id
      * @param SupplierVO
      */
     @Override
     public void update(Long id, SupplierVO SupplierVO) {
         Supplier supplier = new Supplier();
-        BeanUtils.copyProperties(SupplierVO,supplier);
+        BeanUtils.copyProperties(SupplierVO, supplier);
         supplier.setModifiedTime(new Date());
         supplierMapper.updateByPrimaryKeySelective(supplier);
     }
 
     /**
      * 删除供应商
+     *
      * @param id
      */
     @Override
@@ -105,6 +109,7 @@ public class SupplierServiceImpl implements SupplierService {
 
     /**
      * 查询所有
+     *
      * @return
      */
     @Override

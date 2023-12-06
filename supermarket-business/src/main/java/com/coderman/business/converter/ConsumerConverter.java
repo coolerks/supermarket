@@ -10,18 +10,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public class ConsumerConverter {
 
     /**
      * 转voList
+     *
      * @param consumers
      * @return
      */
     public static List<ConsumerVO> converterToVOList(List<Consumer> consumers) {
-        List<ConsumerVO> supplierVOS=new ArrayList<>();
-        if(!CollectionUtils.isEmpty(consumers)){
+        List<ConsumerVO> supplierVOS = new ArrayList<>();
+        if (!CollectionUtils.isEmpty(consumers)) {
             for (Consumer supplier : consumers) {
                 ConsumerVO supplierVO = converterToConsumerVO(supplier);
                 supplierVOS.add(supplierVO);
@@ -38,7 +39,7 @@ public class ConsumerConverter {
      */
     public static ConsumerVO converterToConsumerVO(Consumer supplier) {
         ConsumerVO supplierVO = new ConsumerVO();
-        BeanUtils.copyProperties(supplier,supplierVO);
+        BeanUtils.copyProperties(supplier, supplierVO);
         return supplierVO;
     }
 }

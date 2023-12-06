@@ -2,8 +2,10 @@ package com.coderman.common.vo.business;
 
 import lombok.Data;
 
-/** 商品库存
-  * @Date 2023年12月 * @Version 1.0
+/**
+ * 商品库存
+ *
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 public class ProductStockVO {

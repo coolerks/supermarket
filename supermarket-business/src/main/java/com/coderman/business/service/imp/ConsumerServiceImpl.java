@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
@@ -28,6 +28,7 @@ public class ConsumerServiceImpl implements ConsumerService {
 
     /**
      * 供应商列表
+     *
      * @param pageNum
      * @param pageSize
      * @param consumerVO
@@ -49,21 +50,21 @@ public class ConsumerServiceImpl implements ConsumerService {
             criteria.andLike("contact", "%" + consumerVO.getContact() + "%");
         }
         List<Consumer> consumers = consumerMapper.selectByExample(o);
-        List<ConsumerVO> categoryVOS= ConsumerConverter.converterToVOList(consumers);
+        List<ConsumerVO> categoryVOS = ConsumerConverter.converterToVOList(consumers);
         PageInfo<Consumer> info = new PageInfo<>(consumers);
         return new PageVO<>(info.getTotal(), categoryVOS);
     }
 
 
-
     /**
      * 添加供应商
+     *
      * @param ConsumerVO
      */
     @Override
     public Consumer add(ConsumerVO ConsumerVO) {
         Consumer consumer = new Consumer();
-        BeanUtils.copyProperties(ConsumerVO,consumer);
+        BeanUtils.copyProperties(ConsumerVO, consumer);
         consumer.setCreateTime(new Date());
         consumer.setModifiedTime(new Date());
         consumerMapper.insert(consumer);
@@ -72,30 +73,33 @@ public class ConsumerServiceImpl implements ConsumerService {
 
     /**
      * 编辑供应商
+     *
      * @param id
      * @return
      */
     @Override
     public ConsumerVO edit(Long id) {
         Consumer consumer = consumerMapper.selectByPrimaryKey(id);
-        return  ConsumerConverter.converterToConsumerVO(consumer);
+        return ConsumerConverter.converterToConsumerVO(consumer);
     }
 
     /**
      * 更新供应商
+     *
      * @param id
      * @param ConsumerVO
      */
     @Override
     public void update(Long id, ConsumerVO ConsumerVO) {
         Consumer consumer = new Consumer();
-        BeanUtils.copyProperties(ConsumerVO,consumer);
+        BeanUtils.copyProperties(ConsumerVO, consumer);
         consumer.setModifiedTime(new Date());
         consumerMapper.updateByPrimaryKeySelective(consumer);
     }
 
     /**
      * 删除供应商
+     *
      * @param id
      */
     @Override
@@ -105,6 +109,7 @@ public class ConsumerServiceImpl implements ConsumerService {
 
     /**
      * 查询所有
+     *
      * @return
      */
     @Override

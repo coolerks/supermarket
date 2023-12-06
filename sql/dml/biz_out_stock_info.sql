@@ -1,28 +1,56 @@
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (1, '8d468e4b-0c45-4807-9e0e-6c2c65d6', '3DFC8EA0-6', 1, '2024-05-25 11:32:39', '2024-05-25 11:32:39');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (2, '8d468e4b-0c45-4807-9e0e-6c2c65d6', '6EF5F2C0-9', 2, '2024-05-25 11:32:39', '2024-05-25 11:32:39');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (3, '8d468e4b-0c45-4807-9e0e-6c2c65d6', '6976D3B4-A', 4, '2024-05-25 11:32:39', '2024-05-25 11:32:39');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (4, '2d7158d3-2b15-473e-8cbe-6f6bd45a', '3DFC8EA0-6', 1, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (5, '2d7158d3-2b15-473e-8cbe-6f6bd45a', '6EF5F2C0-9', 1, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (6, '2d7158d3-2b15-473e-8cbe-6f6bd45a', '6976D3B4-A', 1, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (7, '2d7158d3-2b15-473e-8cbe-6f6bd45a', 'AB0E206E-A', 3, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (8, '2d7158d3-2b15-473e-8cbe-6f6bd45a', '6AF405A1-C', 1, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (9, '2d7158d3-2b15-473e-8cbe-6f6bd45a', '2C15F1B6-1', 3, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (10, 'bd5032d0-c84a-4413-a72d-ba80d33f', '3DFC8EA0-6', 80, '2024-05-25 12:08:07', '2024-05-25 12:08:07');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (11, 'bd5032d0-c84a-4413-a72d-ba80d33f', '6EF5F2C0-9', 13, '2024-05-25 12:08:07', '2024-05-25 12:08:07');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (12, 'c23e95d0-0607-4e00-9041-cc97d299', '3DFC8EA0-6', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (13, 'c23e95d0-0607-4e00-9041-cc97d299', '6EF5F2C0-9', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (14, 'c23e95d0-0607-4e00-9041-cc97d299', '6976D3B4-A', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (15, 'c23e95d0-0607-4e00-9041-cc97d299', 'AB0E206E-A', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (16, 'c23e95d0-0607-4e00-9041-cc97d299', '6AF405A1-C', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (17, 'c23e95d0-0607-4e00-9041-cc97d299', '2C15F1B6-1', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (21, '982e449e-1ab0-4456-8e9a-5403a685', '3DFC8EA0-6', 30, '2024-05-26 09:32:25', '2024-05-26 09:32:25');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (22, '622e8b6d-924a-4dfe-bc51-2143cf3c', '6EF5F2C0-9', 13, '2024-05-26 09:34:23', '2024-05-26 09:34:23');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (23, '55e4942f-3c0a-4bc2-85f7-2f2a7bff', '3DFC8EA0-6', 1, '2024-05-26 09:52:09', '2024-05-26 09:52:09');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (24, '55e4942f-3c0a-4bc2-85f7-2f2a7bff', '6EF5F2C0-9', 1, '2024-05-26 09:52:09', '2024-05-26 09:52:09');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (25, '453544fd-53ec-430f-9899-73f2edf5', '6AF405A1-C', 1, '2024-05-26 09:59:57', '2024-05-26 09:59:57');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (26, '453544fd-53ec-430f-9899-73f2edf5', '2C15F1B6-1', 1, '2024-05-26 09:59:57', '2024-05-26 09:59:57');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (27, '453544fd-53ec-430f-9899-73f2edf5', '6976D3B4-A', 1, '2024-05-26 09:59:57', '2024-05-26 09:59:57');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (28, '453544fd-53ec-430f-9899-73f2edf5', '6EF5F2C0-9', 1, '2024-05-26 09:59:57', '2024-05-26 09:59:57');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (29, '4d7e5874-7d9c-4fca-ac08-ee4f4975', '3DFC8EA0-6', 1, '2024-05-26 10:02:01', '2024-05-26 10:02:01');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (30, '4d7e5874-7d9c-4fca-ac08-ee4f4975', '6EF5F2C0-9', 1, '2024-05-26 10:02:03', '2024-05-26 10:02:03');
-INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time) VALUES (31, '4d7e5874-7d9c-4fca-ac08-ee4f4975', '6976D3B4-A', 1, '2024-05-26 10:02:03', '2024-05-26 10:02:03');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (1, '8d468e4b-0c45-4807-9e0e-6c2c65d6', '3DFC8EA0-6', 1, '2024-05-25 11:32:39', '2024-05-25 11:32:39');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (2, '8d468e4b-0c45-4807-9e0e-6c2c65d6', '6EF5F2C0-9', 2, '2024-05-25 11:32:39', '2024-05-25 11:32:39');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (3, '8d468e4b-0c45-4807-9e0e-6c2c65d6', '6976D3B4-A', 4, '2024-05-25 11:32:39', '2024-05-25 11:32:39');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (4, '2d7158d3-2b15-473e-8cbe-6f6bd45a', '3DFC8EA0-6', 1, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (5, '2d7158d3-2b15-473e-8cbe-6f6bd45a', '6EF5F2C0-9', 1, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (6, '2d7158d3-2b15-473e-8cbe-6f6bd45a', '6976D3B4-A', 1, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (7, '2d7158d3-2b15-473e-8cbe-6f6bd45a', 'AB0E206E-A', 3, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (8, '2d7158d3-2b15-473e-8cbe-6f6bd45a', '6AF405A1-C', 1, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (9, '2d7158d3-2b15-473e-8cbe-6f6bd45a', '2C15F1B6-1', 3, '2024-05-25 11:41:02', '2024-05-25 11:41:02');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (10, 'bd5032d0-c84a-4413-a72d-ba80d33f', '3DFC8EA0-6', 80, '2024-05-25 12:08:07', '2024-05-25 12:08:07');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (11, 'bd5032d0-c84a-4413-a72d-ba80d33f', '6EF5F2C0-9', 13, '2024-05-25 12:08:07', '2024-05-25 12:08:07');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (12, 'c23e95d0-0607-4e00-9041-cc97d299', '3DFC8EA0-6', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (13, 'c23e95d0-0607-4e00-9041-cc97d299', '6EF5F2C0-9', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (14, 'c23e95d0-0607-4e00-9041-cc97d299', '6976D3B4-A', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (15, 'c23e95d0-0607-4e00-9041-cc97d299', 'AB0E206E-A', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (16, 'c23e95d0-0607-4e00-9041-cc97d299', '6AF405A1-C', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (17, 'c23e95d0-0607-4e00-9041-cc97d299', '2C15F1B6-1', 1, '2024-05-25 15:46:07', '2024-05-25 15:46:07');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (21, '982e449e-1ab0-4456-8e9a-5403a685', '3DFC8EA0-6', 30, '2024-05-26 09:32:25', '2024-05-26 09:32:25');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (22, '622e8b6d-924a-4dfe-bc51-2143cf3c', '6EF5F2C0-9', 13, '2024-05-26 09:34:23', '2024-05-26 09:34:23');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (23, '55e4942f-3c0a-4bc2-85f7-2f2a7bff', '3DFC8EA0-6', 1, '2024-05-26 09:52:09', '2024-05-26 09:52:09');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (24, '55e4942f-3c0a-4bc2-85f7-2f2a7bff', '6EF5F2C0-9', 1, '2024-05-26 09:52:09', '2024-05-26 09:52:09');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (25, '453544fd-53ec-430f-9899-73f2edf5', '6AF405A1-C', 1, '2024-05-26 09:59:57', '2024-05-26 09:59:57');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (26, '453544fd-53ec-430f-9899-73f2edf5', '2C15F1B6-1', 1, '2024-05-26 09:59:57', '2024-05-26 09:59:57');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (27, '453544fd-53ec-430f-9899-73f2edf5', '6976D3B4-A', 1, '2024-05-26 09:59:57', '2024-05-26 09:59:57');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (28, '453544fd-53ec-430f-9899-73f2edf5', '6EF5F2C0-9', 1, '2024-05-26 09:59:57', '2024-05-26 09:59:57');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (29, '4d7e5874-7d9c-4fca-ac08-ee4f4975', '3DFC8EA0-6', 1, '2024-05-26 10:02:01', '2024-05-26 10:02:01');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (30, '4d7e5874-7d9c-4fca-ac08-ee4f4975', '6EF5F2C0-9', 1, '2024-05-26 10:02:03', '2024-05-26 10:02:03');
+INSERT INTO supermarket.biz_out_stock_info (id, out_num, p_num, product_number, create_time, modified_time)
+VALUES (31, '4d7e5874-7d9c-4fca-ac08-ee4f4975', '6976D3B4-A', 1, '2024-05-26 10:02:03', '2024-05-26 10:02:03');

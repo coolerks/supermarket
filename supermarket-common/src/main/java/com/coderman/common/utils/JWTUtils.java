@@ -1,8 +1,9 @@
 package com.coderman.common.utils;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
+
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -16,7 +17,7 @@ public class JWTUtils {
     /**
      * 过期时间6小时
      */
-    private static final long EXPIRE_TIME = 6*60*60*1000;
+    private static final long EXPIRE_TIME = 6 * 60 * 60 * 1000;
 
     /**
      * 校验token是否正确
@@ -58,7 +59,7 @@ public class JWTUtils {
      */
     public static String sign(String username, String secret) {
         try {
-            Date date = new Date(System.currentTimeMillis()+EXPIRE_TIME);
+            Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
             Algorithm algorithm = Algorithm.HMAC256(secret);
             // 附带username信息
             return JWT.create()
@@ -75,9 +76,9 @@ public class JWTUtils {
      * @param token
      * @return
      */
-    public static boolean isExpire(String token){
+    public static boolean isExpire(String token) {
         DecodedJWT jwt = JWT.decode(token);
-        return System.currentTimeMillis()>jwt.getExpiresAt().getTime();
+        return System.currentTimeMillis() > jwt.getExpiresAt().getTime();
     }
-    }
+}
 

@@ -2,28 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.coderman.system.mapper.LoginLogMapper">
 
-  <select id="userLoginReport" resultType="map"
-          parameterType="com.coderman.common.vo.system.UserVO">
-      select
-      date_format(l.login_time, '%m-%d') days,
-      count(1) count
-      from
-      (
-      select
-      *
-      from
-      tb_login_log
-      where
-      date_sub(curdate(), interval 20 day) &lt; date(login_time)
-      ) as l
-      <where>
-          <if test="username != null and username != ''">
-              l.username = #{username}
-          </if>
-      </where>
-      group by
-      days
-  </select>
+    <select id="userLoginReport" resultType="map"
+            parameterType="com.coderman.common.vo.system.UserVO">
+        select
+        date_format(l.login_time, '%m-%d') days,
+        count(1) count
+        from
+        (
+        select
+        *
+        from
+        tb_login_log
+        where
+        date_sub(curdate(), interval 20 day) &lt; date(login_time)
+        ) as l
+        <where>
+            <if test="username != null and username != ''">
+                l.username = #{username}
+            </if>
+        </where>
+        group by
+        days
+    </select>
 
 
 </mapper>

@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Service
 public class LoginLogServiceImpl implements LoginLogService {
@@ -42,6 +42,7 @@ public class LoginLogServiceImpl implements LoginLogService {
 
     /**
      * 登入日志列表
+     *
      * @param pageNum
      * @param pageSize
      * @param loginLogVO
@@ -49,42 +50,43 @@ public class LoginLogServiceImpl implements LoginLogService {
      */
     @Override
     public PageVO<LoginLogVO> findLoginLogList(Integer pageNum, Integer pageSize, LoginLogVO loginLogVO) {
-        PageHelper.startPage(pageNum,pageSize);
+        PageHelper.startPage(pageNum, pageSize);
         Example o = new Example(LoginLog.class);
         Example.Criteria criteria = o.createCriteria();
         o.setOrderByClause("login_time desc");
-        if(loginLogVO.getIp()!=null&&!"".equals(loginLogVO.getIp())){
-            criteria.andLike("ip","%"+loginLogVO.getIp()+"%");
+        if (loginLogVO.getIp() != null && !"".equals(loginLogVO.getIp())) {
+            criteria.andLike("ip", "%" + loginLogVO.getIp() + "%");
         }
-        if(loginLogVO.getLocation()!=null&&!"".equals(loginLogVO.getLocation())){
-            criteria.andLike("location","%"+loginLogVO.getLocation()+"%");
+        if (loginLogVO.getLocation() != null && !"".equals(loginLogVO.getLocation())) {
+            criteria.andLike("location", "%" + loginLogVO.getLocation() + "%");
         }
-        if(loginLogVO.getUsername()!=null&&!"".equals(loginLogVO.getUsername())){
-            criteria.andLike("username","%"+loginLogVO.getUsername()+"%");
+        if (loginLogVO.getUsername() != null && !"".equals(loginLogVO.getUsername())) {
+            criteria.andLike("username", "%" + loginLogVO.getUsername() + "%");
         }
         List<LoginLog> loginLogs = loginLogMapper.selectByExample(o);
-        List<LoginLogVO> loginLogVOS=new ArrayList<>();
-        if(!CollectionUtils.isEmpty(loginLogs)){
+        List<LoginLogVO> loginLogVOS = new ArrayList<>();
+        if (!CollectionUtils.isEmpty(loginLogs)) {
             for (LoginLog loginLog : loginLogs) {
                 LoginLogVO logVO = new LoginLogVO();
-                BeanUtils.copyProperties(loginLog,logVO);
+                BeanUtils.copyProperties(loginLog, logVO);
                 loginLogVOS.add(logVO);
             }
         }
-        PageInfo<LoginLog> info=new PageInfo<>(loginLogs);
-        return new PageVO<>(info.getTotal(),loginLogVOS);
+        PageInfo<LoginLog> info = new PageInfo<>(loginLogs);
+        return new PageVO<>(info.getTotal(), loginLogVOS);
     }
 
     /**
      * 批量删除日志
+     *
      * @param list
      */
     @Override
     public void batchDelete(List<Long> list) throws SystemException {
         for (Long id : list) {
             LoginLog loginLog = loginLogMapper.selectByPrimaryKey(id);
-            if(loginLog==null){
-                throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"id="+id+"登入日志不存在");
+            if (loginLog == null) {
+                throw new SystemException(SystemCodeEnum.PARAMETER_ERROR, "id=" + id + "登入日志不存在");
             }
             delete(id);
         }
@@ -92,6 +94,7 @@ public class LoginLogServiceImpl implements LoginLogService {
 
     /**
      * 登入报表
+     *
      * @param userVO
      * @return
      */
@@ -102,6 +105,7 @@ public class LoginLogServiceImpl implements LoginLogService {
 
     /**
      * 插入登入日志
+     *
      * @param request
      */
     @Transactional
@@ -112,6 +116,7 @@ public class LoginLogServiceImpl implements LoginLogService {
 
     /**
      * 创建登入日志
+     *
      * @param
      * @return
      */
@@ -133,14 +138,15 @@ public class LoginLogServiceImpl implements LoginLogService {
 
     /**
      * 删除登入日志
+     *
      * @param id
      */
     @Transactional
     @Override
     public void delete(Long id) throws SystemException {
         LoginLog loginLog = loginLogMapper.selectByPrimaryKey(id);
-        if(loginLog==null){
-            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"登入日志不存在");
+        if (loginLog == null) {
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR, "登入日志不存在");
         }
         loginLogMapper.deleteByPrimaryKey(id);
     }

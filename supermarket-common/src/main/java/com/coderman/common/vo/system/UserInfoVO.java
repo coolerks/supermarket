@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 @ApiModel(value = "用户登入信息")
@@ -36,6 +36,6 @@ public class UserInfoVO {
     private String department;
 
     @ApiModelProperty(value = "是否是超管")
-    private Boolean isAdmin=false;
+    private Boolean isAdmin = false;
 
 }

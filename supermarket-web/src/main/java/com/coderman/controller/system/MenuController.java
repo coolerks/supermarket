@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "系统模块-菜单权限相关接口")
 @RequestMapping("/system/menu")
@@ -114,12 +114,13 @@ public class MenuController {
 
     /**
      * 导出excel
+     *
      * @param response
      */
     @ApiOperation(value = "导出excel", notes = "导出所有菜单的excel表格")
     @PostMapping("excel")
     @RequiresPermissions("menu:export")
-    @ControllerEndpoint(exceptionMessage = "导出Excel失败",operation = "导出菜单excel")
+    @ControllerEndpoint(exceptionMessage = "导出Excel失败", operation = "导出菜单excel")
     public void export(HttpServletResponse response) {
         List<Menu> menus = this.menuService.findAll();
         ExcelKit.$Export(Menu.class, response).downXlsx(menus, false);

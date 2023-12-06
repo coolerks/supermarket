@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 系统日志
  *
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "系统模块-操作日志相关接口")
 @RestController
@@ -36,8 +36,8 @@ public class LogController {
     @ApiOperation(value = "日志列表", notes = "系统日志列表，模糊查询")
     @GetMapping("/findLogList")
     public ResponseBean<PageVO<LogVO>> findLogList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                                    @RequestParam(value = "pageSize") Integer pageSize,
-                                    LogVO logVO) {
+                                                   @RequestParam(value = "pageSize") Integer pageSize,
+                                                   LogVO logVO) {
         PageVO<LogVO> logList = logService.findLogList(pageNum, pageSize, logVO);
         return ResponseBean.success(logList);
     }

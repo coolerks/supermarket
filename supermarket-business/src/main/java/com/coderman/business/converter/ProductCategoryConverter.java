@@ -10,32 +10,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public class ProductCategoryConverter {
 
     /**
      * 转vo
+     *
      * @param productCategory
      * @return
      */
     public static ProductCategoryVO converterToProductCategoryVO(ProductCategory productCategory) {
         ProductCategoryVO productCategoryVO = new ProductCategoryVO();
-        BeanUtils.copyProperties(productCategory,productCategoryVO);
+        BeanUtils.copyProperties(productCategory, productCategoryVO);
         return productCategoryVO;
     }
 
     /**
      * 转voList
+     *
      * @param productCategories
      * @return
      */
     public static List<ProductCategoryVO> converterToVOList(List<ProductCategory> productCategories) {
-        List<ProductCategoryVO> productCategoryVOS=new ArrayList<>();
-        if(!CollectionUtils.isEmpty(productCategories)){
+        List<ProductCategoryVO> productCategoryVOS = new ArrayList<>();
+        if (!CollectionUtils.isEmpty(productCategories)) {
             for (ProductCategory productCategory : productCategories) {
                 ProductCategoryVO productCategoryVO = new ProductCategoryVO();
-                BeanUtils.copyProperties(productCategory,productCategoryVO);
+                BeanUtils.copyProperties(productCategory, productCategoryVO);
                 productCategoryVOS.add(productCategoryVO);
             }
         }
@@ -44,15 +46,16 @@ public class ProductCategoryConverter {
 
     /**
      * 转树节点
+     *
      * @param productCategoryVOList
      * @return
      */
     public static List<ProductCategoryTreeNodeVO> converterToTreeNodeVO(List<ProductCategoryVO> productCategoryVOList) {
-        List<ProductCategoryTreeNodeVO> nodes=new ArrayList<>();
-        if(!CollectionUtils.isEmpty(productCategoryVOList)){
+        List<ProductCategoryTreeNodeVO> nodes = new ArrayList<>();
+        if (!CollectionUtils.isEmpty(productCategoryVOList)) {
             for (ProductCategoryVO productCategoryVO : productCategoryVOList) {
                 ProductCategoryTreeNodeVO productCategoryTreeNodeVO = new ProductCategoryTreeNodeVO();
-                BeanUtils.copyProperties(productCategoryVO,productCategoryTreeNodeVO);
+                BeanUtils.copyProperties(productCategoryVO, productCategoryTreeNodeVO);
                 nodes.add(productCategoryTreeNodeVO);
             }
         }

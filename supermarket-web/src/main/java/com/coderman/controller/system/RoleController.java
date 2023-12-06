@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "系统模块-角色相关接口")
 @RestController
@@ -82,8 +82,8 @@ public class RoleController {
     @ApiOperation(value = "角色列表")
     @GetMapping("/findRoleList")
     public ResponseBean<PageVO<RoleVO>> findRoleList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                                     @RequestParam(value = "pageSize", defaultValue = "7") Integer pageSize,
-                                     RoleVO roleVO) {
+                                                     @RequestParam(value = "pageSize", defaultValue = "7") Integer pageSize,
+                                                     RoleVO roleVO) {
         PageVO<RoleVO> roleList = roleService.findRoleList(pageNum, pageSize, roleVO);
         return ResponseBean.success(roleList);
     }
@@ -167,12 +167,13 @@ public class RoleController {
 
     /**
      * 导出excel
+     *
      * @param response
      */
     @ApiOperation(value = "导出excel", notes = "导出所有角色的excel表格")
     @PostMapping("/excel")
     @RequiresPermissions("role:export")
-    @ControllerEndpoint(exceptionMessage = "导出Excel失败",operation = "导出角色excel")
+    @ControllerEndpoint(exceptionMessage = "导出Excel失败", operation = "导出角色excel")
     public void export(HttpServletResponse response) {
         List<Role> roles = this.roleService.findAll();
         ExcelKit.$Export(Role.class, response).downXlsx(roles, false);

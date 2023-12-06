@@ -7,7 +7,7 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 @ApiModel(value = "用户登入表单")

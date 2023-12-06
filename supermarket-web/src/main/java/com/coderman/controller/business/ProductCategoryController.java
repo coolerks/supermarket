@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 商品分类管理
  *
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "业务模块-商品类别相关接口")
 @RestController
@@ -94,8 +94,8 @@ public class ProductCategoryController {
     @ApiOperation(value = "添加分类")
     @PostMapping("/add")
     public ResponseBean add(@RequestBody @Validated ProductCategoryVO productCategoryVO) {
-            productCategoryService.add(productCategoryVO);
-            return ResponseBean.success();
+        productCategoryService.add(productCategoryVO);
+        return ResponseBean.success();
     }
 
     /**

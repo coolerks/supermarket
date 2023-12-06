@@ -1,6 +1,5 @@
 package com.coderman.common.properties;
 
-import com.qcloud.cos.http.HttpProtocol;
 import lombok.Data;
 import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;

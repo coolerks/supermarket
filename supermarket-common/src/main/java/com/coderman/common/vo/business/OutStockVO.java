@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 public class OutStockVO {
@@ -30,7 +30,7 @@ public class OutStockVO {
 
 
     //出库的商品列表
-    private List<Object> products=new ArrayList<>();
+    private List<Object> products = new ArrayList<>();
 
     private String remark;
 
@@ -56,9 +56,6 @@ public class OutStockVO {
 
     //排序
     private Integer sort;
-
-
-
 
 
 }

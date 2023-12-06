@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 部门管理
  *
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "系统模块-部门相关接口")
 @RestController
@@ -41,8 +41,8 @@ public class DepartmentController {
     @ApiOperation(value = "部门列表", notes = "部门列表,根据部门名模糊查询")
     @GetMapping("/findDepartmentList")
     public ResponseBean<PageVO<DepartmentVO>> findDepartmentList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                                           @RequestParam(value = "pageSize") Integer pageSize,
-                                           DepartmentVO departmentVO) {
+                                                                 @RequestParam(value = "pageSize") Integer pageSize,
+                                                                 DepartmentVO departmentVO) {
         PageVO<DepartmentVO> departmentsList = departmentService.findDepartmentList(pageNum, pageSize, departmentVO);
         return ResponseBean.success(departmentsList);
     }
@@ -130,12 +130,13 @@ public class DepartmentController {
 
     /**
      * 导出excel
+     *
      * @param response
      */
     @ApiOperation(value = "导出excel", notes = "导出所有部门的excel表格")
     @PostMapping("/excel")
     @RequiresPermissions("department:export")
-    @ControllerEndpoint(exceptionMessage = "导出Excel失败",operation = "导出部门excel")
+    @ControllerEndpoint(exceptionMessage = "导出Excel失败", operation = "导出部门excel")
     public void export(HttpServletResponse response) {
         List<Department> departments = this.departmentService.findAll();
         ExcelKit.$Export(Department.class, response).downXlsx(departments, false);

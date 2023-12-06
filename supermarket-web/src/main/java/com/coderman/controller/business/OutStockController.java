@@ -21,7 +21,8 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 出库单
-  * @Date 2023年12月 * @Version 1.0
+ *
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "业务模块-商品出库相关接口")
 @RestController
@@ -37,6 +38,7 @@ public class OutStockController {
 
     /**
      * 提交商品出库单
+     *
      * @return
      */
     @ControllerEndpoint(exceptionMessage = "出库单申请失败", operation = "出库单申请")
@@ -44,24 +46,24 @@ public class OutStockController {
     @PostMapping("/addOutStock")
     @RequiresPermissions({"outStock:out"})
     public ResponseBean addOutStock(@RequestBody @Validated OutStockVO outStockVO) throws BusinessException {
-        if(outStockVO.getConsumerId()==null){
+        if (outStockVO.getConsumerId() == null) {
             //说明现在添加商品来源
             ConsumerVO consumerVO = new ConsumerVO();
-            BeanUtils.copyProperties(outStockVO,consumerVO);
-            if("".equals(consumerVO.getName())||consumerVO.getName()==null){
-                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"商品去向名不能为空");
+            BeanUtils.copyProperties(outStockVO, consumerVO);
+            if ("".equals(consumerVO.getName()) || consumerVO.getName() == null) {
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "商品去向名不能为空");
             }
-            if("".equals(consumerVO.getContact())||consumerVO.getContact()==null){
-                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"联系人不能为空");
+            if ("".equals(consumerVO.getContact()) || consumerVO.getContact() == null) {
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "联系人不能为空");
             }
-            if("".equals(consumerVO.getAddress())||consumerVO.getAddress()==null){
-                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"地址不能为空");
+            if ("".equals(consumerVO.getAddress()) || consumerVO.getAddress() == null) {
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "地址不能为空");
             }
-            if("".equals(consumerVO.getPhone())||consumerVO.getPhone()==null){
-                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"联系方式不能为空");
+            if ("".equals(consumerVO.getPhone()) || consumerVO.getPhone() == null) {
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "联系方式不能为空");
             }
-            if(consumerVO.getSort()==null){
-                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"排序不能为空");
+            if (consumerVO.getSort() == null) {
+                throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "排序不能为空");
             }
             Consumer consumer = consumerService.add(consumerVO);
             outStockVO.setConsumerId(consumer.getId());
@@ -74,6 +76,7 @@ public class OutStockController {
 
     /**
      * 出库单列表
+     *
      * @param pageNum
      * @param pageSize
      * @param outStockVO
@@ -91,6 +94,7 @@ public class OutStockController {
 
     /**
      * 移入回收站
+     *
      * @param id
      * @return
      */
@@ -102,6 +106,7 @@ public class OutStockController {
         outStockService.remove(id);
         return ResponseBean.success();
     }
+
     /**
      * 商品出库单详细
      *
@@ -113,14 +118,15 @@ public class OutStockController {
     @GetMapping("/detail/{id}")
     public ResponseBean detail(@PathVariable Long id,
                                @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                               @RequestParam(value = "pageSize",defaultValue = "3") Integer pageSize) throws BusinessException {
-        OutStockDetailVO detail = outStockService.detail(id,pageNum,pageSize);
+                               @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize) throws BusinessException {
+        OutStockDetailVO detail = outStockService.detail(id, pageNum, pageSize);
         return ResponseBean.success(detail);
     }
 
 
     /**
      * 删除商品出库单
+     *
      * @param id
      * @return
      */
@@ -136,6 +142,7 @@ public class OutStockController {
 
     /**
      * 出库审核
+     *
      * @param id
      * @return
      */
@@ -149,9 +156,9 @@ public class OutStockController {
     }
 
 
-
     /**
      * 恢复数据从回收站
+     *
      * @param id
      * @return
      */

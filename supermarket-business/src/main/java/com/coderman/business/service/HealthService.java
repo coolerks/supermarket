@@ -7,18 +7,20 @@ import com.coderman.common.vo.business.HealthVO;
 import com.coderman.common.vo.system.PageVO;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public interface HealthService {
 
     /**
      * 每日汇报
+     *
      * @param healthVO
      */
     void report(HealthVO healthVO) throws BusinessException;
 
     /**
      * 今日是否已经汇报
+     *
      * @param id
      * @return
      */
@@ -26,6 +28,7 @@ public interface HealthService {
 
     /**
      * 汇报记录
+     *
      * @return
      */
     PageVO<Health> history(Long id, Integer pageNum, Integer pageSize);

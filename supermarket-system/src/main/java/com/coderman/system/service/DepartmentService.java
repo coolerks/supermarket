@@ -10,11 +10,12 @@ import com.coderman.common.vo.system.PageVO;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public interface DepartmentService {
     /**
      * 部门列表
+     *
      * @param pageNum
      * @param pageSize
      * @param departmentVO
@@ -24,18 +25,21 @@ public interface DepartmentService {
 
     /**
      * 查询所有部门主任
+     *
      * @return
      */
     List<DeanVO> findDeanList();
 
     /**
      * 添加院部门
+     *
      * @param departmentVO
      */
     void add(DepartmentVO departmentVO);
 
     /**
      * 编辑院部门
+     *
      * @param id
      * @return
      */
@@ -43,6 +47,7 @@ public interface DepartmentService {
 
     /**
      * 更新院部门
+     *
      * @param id
      * @param departmentVO
      */
@@ -50,12 +55,14 @@ public interface DepartmentService {
 
     /**
      * 删除院部门
+     *
      * @param id
      */
     void delete(Long id) throws SystemException;
 
     /**
      * 所有部门
+     *
      * @return
      */
     List<DepartmentVO> findAllVO();
@@ -63,6 +70,7 @@ public interface DepartmentService {
 
     /**
      * 全部部门
+     *
      * @return
      */
     List<Department> findAll();

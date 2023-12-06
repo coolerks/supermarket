@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 public class InStockVO {
@@ -34,14 +34,16 @@ public class InStockVO {
 
     private Date modified;
 
-    /** 该入库单的总数**/
+    /**
+     * 该入库单的总数
+     **/
     private Integer productNumber;
 
 
     @NotBlank(message = "入库备注不能为空")
     private String remark;
 
-    private List<Object>products=new ArrayList<>();
+    private List<Object> products = new ArrayList<>();
 
     private Integer status;
 
@@ -54,7 +56,9 @@ public class InStockVO {
     private Date endTime;
 
 
-    /** 如果supplierId不存在需要添加供应商信息**/
+    /**
+     * 如果supplierId不存在需要添加供应商信息
+     **/
 
     private String name;
 

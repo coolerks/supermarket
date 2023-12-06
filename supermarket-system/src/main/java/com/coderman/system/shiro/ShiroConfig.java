@@ -58,12 +58,12 @@ public class ShiroConfig {
         filterRuleMap.put("/user/imgCode", "anon");
         //开放API文档接口
         filterRuleMap.put("/swagger-ui.html", "anon");
-        filterRuleMap.put("/webjars/**","anon");
-        filterRuleMap.put("/swagger-resources/**","anon");
-        filterRuleMap.put("/v2/**","anon");
-        filterRuleMap.put("/static/**","anon");
+        filterRuleMap.put("/webjars/**", "anon");
+        filterRuleMap.put("/swagger-resources/**", "anon");
+        filterRuleMap.put("/v2/**", "anon");
+        filterRuleMap.put("/static/**", "anon");
         //sql监控
-        filterRuleMap.put("/druid/**","anon");
+        filterRuleMap.put("/druid/**", "anon");
         factoryBean.setFilterChainDefinitionMap(filterRuleMap);
         return factoryBean;
     }

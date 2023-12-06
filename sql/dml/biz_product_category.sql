@@ -1,33 +1,66 @@
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (20, '医疗物资', '11111122', 2, '2024-03-17 00:00:00', '2024-03-22 23:00:38', 0);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (21, '仪器', '仪器', 1, '2024-03-17 00:00:00', '2024-08-19 17:37:27', 20);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (23, '防护品', '防护品', 2, '2024-03-17 11:33:48', '2024-03-17 11:33:48', 20);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (24, '生活用品', '生活用品', 3, '2024-03-17 00:00:00', '2024-03-22 23:00:43', 0);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (27, '衣服用品', '衣服用品', 2, '2024-03-17 11:38:50', '2024-03-17 11:38:50', 24);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (28, '防护服', '防护服', 3, '2024-03-17 11:44:38', '2024-03-17 11:44:38', 23);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (30, '粮油类', '粮油类', 2, '2024-03-17 11:51:29', '2024-03-17 11:51:29', 24);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (31, '洗化用品', '洗化用品', 3, '2024-03-17 11:51:50', '2024-03-17 11:51:50', 24);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (32, '呼吸机', '呼吸机', 1, '2024-03-17 00:00:00', '2024-03-17 13:43:01', 21);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (33, '交通运输', '交通运输。。。2323。', 1, '2024-03-17 00:00:00', '2024-12-17 19:46:33', 0);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (34, '车辆', '小车车', 2, '2024-03-17 11:56:51', '2024-03-17 11:56:51', 33);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (37, '运输车', '运输车', 1, '2024-03-17 00:00:00', '2024-03-23 10:46:10', 34);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (38, '温度器', '温度器', 1, '2024-03-18 01:43:52', '2024-03-18 01:43:52', 21);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (39, '防毒面具', '防毒面具', 5, '2024-03-18 01:44:27', '2024-03-18 01:44:27', 23);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (40, '衣服', '衣服', 1, '2024-03-18 01:50:33', '2024-03-18 01:50:33', 27);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (41, '大米', '大米', 2, '2024-03-18 01:50:49', '2024-03-18 01:50:49', 30);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (43, '药品', '药品', 2, '2024-03-18 01:57:42', '2024-03-18 01:57:42', 20);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (44, '输液', '输液', 2, '2024-03-18 01:58:31', '2024-03-18 01:58:31', 43);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (45, '消毒液', '消毒液', 2, '2024-03-18 01:59:03', '2024-03-18 01:59:03', 43);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (46, '血压仪', '血压仪', 2, '2024-03-18 01:59:30', '2024-03-18 01:59:30', 21);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (50, 'test', 'test', 1, '2024-03-19 01:05:24', '2024-03-19 01:05:24', 49);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (51, 'test3', 'test3', 3, '2024-03-19 01:05:45', '2024-03-19 01:05:45', 50);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (52, '洗发水', '洗发的', 1, '2024-03-20 08:15:45', '2024-03-20 08:15:45', 31);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (53, '解热镇痛药', '解热镇痛药', 1, '2024-03-21 03:37:18', '2024-03-21 03:37:18', 43);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (54, '外用及器具', '外用及器具', 1, '2024-03-21 03:38:13', '2024-03-21 03:38:13', 20);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (55, '导尿管', '导尿管', 2, '2024-03-21 03:38:30', '2024-03-21 03:38:30', 54);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (56, '三角巾急救包', '三角巾急救包', 2, '2024-03-21 03:38:51', '2024-03-21 03:38:51', 54);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (57, '消毒药品类', '消毒药品类', 2, '2024-03-21 03:40:09', '2024-03-21 03:40:09', 43);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (58, '外科手术服', '外科手术服', 2, '2024-03-21 03:41:20', '2024-03-21 03:41:20', 23);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (62, '食用油', '实用油', 2, '2024-03-25 11:13:39', '2024-03-25 11:13:39', 30);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (75, '333', '333', 3, '2024-08-19 17:10:54', '2024-08-19 17:10:54', 74);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (79, '2313', '232323', 2, '2024-08-19 17:37:10', '2024-08-19 17:37:10', 21);
-INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid) VALUES (83, '粮食', '打赏打赏打赏', 1, '2023-12-02 15:29:54', '2023-12-02 15:29:54', 0);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (20, '医疗物资', '11111122', 2, '2024-03-17 00:00:00', '2024-03-22 23:00:38', 0);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (21, '仪器', '仪器', 1, '2024-03-17 00:00:00', '2024-08-19 17:37:27', 20);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (23, '防护品', '防护品', 2, '2024-03-17 11:33:48', '2024-03-17 11:33:48', 20);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (24, '生活用品', '生活用品', 3, '2024-03-17 00:00:00', '2024-03-22 23:00:43', 0);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (27, '衣服用品', '衣服用品', 2, '2024-03-17 11:38:50', '2024-03-17 11:38:50', 24);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (28, '防护服', '防护服', 3, '2024-03-17 11:44:38', '2024-03-17 11:44:38', 23);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (30, '粮油类', '粮油类', 2, '2024-03-17 11:51:29', '2024-03-17 11:51:29', 24);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (31, '洗化用品', '洗化用品', 3, '2024-03-17 11:51:50', '2024-03-17 11:51:50', 24);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (32, '呼吸机', '呼吸机', 1, '2024-03-17 00:00:00', '2024-03-17 13:43:01', 21);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (33, '交通运输', '交通运输。。。2323。', 1, '2024-03-17 00:00:00', '2024-12-17 19:46:33', 0);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (34, '车辆', '小车车', 2, '2024-03-17 11:56:51', '2024-03-17 11:56:51', 33);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (37, '运输车', '运输车', 1, '2024-03-17 00:00:00', '2024-03-23 10:46:10', 34);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (38, '温度器', '温度器', 1, '2024-03-18 01:43:52', '2024-03-18 01:43:52', 21);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (39, '防毒面具', '防毒面具', 5, '2024-03-18 01:44:27', '2024-03-18 01:44:27', 23);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (40, '衣服', '衣服', 1, '2024-03-18 01:50:33', '2024-03-18 01:50:33', 27);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (41, '大米', '大米', 2, '2024-03-18 01:50:49', '2024-03-18 01:50:49', 30);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (43, '药品', '药品', 2, '2024-03-18 01:57:42', '2024-03-18 01:57:42', 20);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (44, '输液', '输液', 2, '2024-03-18 01:58:31', '2024-03-18 01:58:31', 43);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (45, '消毒液', '消毒液', 2, '2024-03-18 01:59:03', '2024-03-18 01:59:03', 43);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (46, '血压仪', '血压仪', 2, '2024-03-18 01:59:30', '2024-03-18 01:59:30', 21);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (50, 'test', 'test', 1, '2024-03-19 01:05:24', '2024-03-19 01:05:24', 49);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (51, 'test3', 'test3', 3, '2024-03-19 01:05:45', '2024-03-19 01:05:45', 50);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (52, '洗发水', '洗发的', 1, '2024-03-20 08:15:45', '2024-03-20 08:15:45', 31);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (53, '解热镇痛药', '解热镇痛药', 1, '2024-03-21 03:37:18', '2024-03-21 03:37:18', 43);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (54, '外用及器具', '外用及器具', 1, '2024-03-21 03:38:13', '2024-03-21 03:38:13', 20);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (55, '导尿管', '导尿管', 2, '2024-03-21 03:38:30', '2024-03-21 03:38:30', 54);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (56, '三角巾急救包', '三角巾急救包', 2, '2024-03-21 03:38:51', '2024-03-21 03:38:51', 54);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (57, '消毒药品类', '消毒药品类', 2, '2024-03-21 03:40:09', '2024-03-21 03:40:09', 43);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (58, '外科手术服', '外科手术服', 2, '2024-03-21 03:41:20', '2024-03-21 03:41:20', 23);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (62, '食用油', '实用油', 2, '2024-03-25 11:13:39', '2024-03-25 11:13:39', 30);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (75, '333', '333', 3, '2024-08-19 17:10:54', '2024-08-19 17:10:54', 74);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (79, '2313', '232323', 2, '2024-08-19 17:37:10', '2024-08-19 17:37:10', 21);
+INSERT INTO supermarket.biz_product_category (id, name, remark, sort, create_time, modified_time, pid)
+VALUES (83, '粮食', '打赏打赏打赏', 1, '2023-12-02 15:29:54', '2023-12-02 15:29:54', 0);

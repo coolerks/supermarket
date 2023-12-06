@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 public class ProductCategoryVO {
@@ -29,7 +29,9 @@ public class ProductCategoryVO {
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
     private Date modifiedTime;
 
-    /** 父级分类id*/
+    /**
+     * 父级分类id
+     */
     @NotNull(message = "父级菜单不能为空")
     private Long pid;
 

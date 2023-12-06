@@ -2,7 +2,8 @@ package com.coderman.common.enums.system;
 
 /**
  * 用户类型
-  * @Date 2023年12月 * @Version 1.0
+ *
+ * @Date 2023年12月 * @Version 1.0
  **/
 public enum UserTypeEnum {
 

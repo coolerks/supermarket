@@ -11,12 +11,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public interface LoginLogService {
 
     /**
      * 添加登入日志
+     *
      * @param request
      */
     void add(HttpServletRequest request);
@@ -24,6 +25,7 @@ public interface LoginLogService {
 
     /**
      * 删除登入日志
+     *
      * @param id
      */
     void delete(Long id) throws SystemException;
@@ -31,6 +33,7 @@ public interface LoginLogService {
 
     /**
      * 登入日志列表
+     *
      * @param pageNum
      * @param pageSize
      * @param loginLogVO
@@ -40,12 +43,14 @@ public interface LoginLogService {
 
     /**
      * 批量删除登入日志
+     *
      * @param list
      */
     void batchDelete(List<Long> list) throws SystemException;
 
     /**
      * 用户登入报表
+     *
      * @param userVO
      * @return
      */

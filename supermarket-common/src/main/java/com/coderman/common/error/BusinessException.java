@@ -4,24 +4,25 @@ import lombok.Data;
 
 /**
  * 业务异常
-  * @Date 2023年12月 * @Version 1.0
+ *
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
-public class BusinessException  extends Exception implements BaseError{
+public class BusinessException extends Exception implements BaseError {
 
     //所有实现了BaseError的ErrorEnum.
     private BaseError baseError;
 
     //直接构造错误消息的构造异常
-    public BusinessException(BaseError baseError){
+    public BusinessException(BaseError baseError) {
         super(baseError.getErrorMsg());
-        this.baseError=baseError;
+        this.baseError = baseError;
     }
 
     //自定义错误消息的构造异常
-    public BusinessException(BaseError baseError,String customErrorMessage){
+    public BusinessException(BaseError baseError, String customErrorMessage) {
         super();
-        this.baseError=baseError;
+        this.baseError = baseError;
         this.baseError.setErrorMsg(customErrorMessage);
     }
 

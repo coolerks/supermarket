@@ -9,10 +9,10 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
-public class UserVO{
+public class UserVO {
 
     private Long id;
 

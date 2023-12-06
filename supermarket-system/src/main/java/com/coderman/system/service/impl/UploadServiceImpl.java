@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Service
 public class UploadServiceImpl implements UploadService {
@@ -38,7 +38,7 @@ public class UploadServiceImpl implements UploadService {
     @Override
     public String uploadImage(MultipartFile file) throws IOException, SystemException {
         if (file.isEmpty()) {
-            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"上传的文件不能为空");
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR, "上传的文件不能为空");
         }
         InputStream inputStream = file.getInputStream();
         //文件的原名称
@@ -59,7 +59,7 @@ public class UploadServiceImpl implements UploadService {
             attachmentMapper.insert(imageAttachment);
         }
         //TODO
-        return  path;
+        return path;
     }
 
     @Override
@@ -84,9 +84,9 @@ public class UploadServiceImpl implements UploadService {
     @Transactional
     public void delete(Long id) throws SystemException {
         ImageAttachment image = attachmentMapper.selectByPrimaryKey(id);
-        if(image==null){
-            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"图片不存在");
-        }else {
+        if (image == null) {
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR, "图片不存在");
+        } else {
             attachmentMapper.deleteByPrimaryKey(id);
 //            fdfsUtil.deleteFile(image.getPath());
         }

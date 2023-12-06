@@ -1,11 +1,9 @@
 package com.coderman.system.aspect;
 
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.reflect.MethodSignature;
-
 import java.lang.reflect.Method;
 
 /**
+ *
  */
 public abstract class AspectSupport {
 

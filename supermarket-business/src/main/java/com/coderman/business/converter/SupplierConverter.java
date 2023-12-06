@@ -9,18 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public class SupplierConverter {
 
     /**
      * 转voList
+     *
      * @param suppliers
      * @return
      */
     public static List<SupplierVO> converterToVOList(List<Supplier> suppliers) {
-        List<SupplierVO> supplierVOS=new ArrayList<>();
-        if(!CollectionUtils.isEmpty(suppliers)){
+        List<SupplierVO> supplierVOS = new ArrayList<>();
+        if (!CollectionUtils.isEmpty(suppliers)) {
             for (Supplier supplier : suppliers) {
                 SupplierVO supplierVO = converterToSupplierVO(supplier);
                 supplierVOS.add(supplierVO);
@@ -37,7 +38,7 @@ public class SupplierConverter {
      */
     public static SupplierVO converterToSupplierVO(Supplier supplier) {
         SupplierVO supplierVO = new SupplierVO();
-        BeanUtils.copyProperties(supplier,supplierVO);
+        BeanUtils.copyProperties(supplier, supplierVO);
         return supplierVO;
     }
 }

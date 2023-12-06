@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Service
 public class HealthServiceImpl implements HealthService {
@@ -28,46 +28,49 @@ public class HealthServiceImpl implements HealthService {
 
     /**
      * 每日汇报
+     *
      * @param healthVO
      */
     @Override
     public void report(HealthVO healthVO) throws BusinessException {
         Health report = isReport(healthVO.getUserId());
-        if(report!=null) {
+        if (report != null) {
             throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "今日已经汇报,无法重复汇报！");
         }
         Health health = new Health();
-        BeanUtils.copyProperties(healthVO,health);
+        BeanUtils.copyProperties(healthVO, health);
         health.setCreateTime(new Date());
         healthMapper.insert(health);
     }
 
     /**
      * 今日是否已汇报
+     *
      * @param id
      * @return
      */
     @Override
     public Health isReport(Long id) {
-        List<Health> health=healthMapper.isReport(id);
-        if(health.size()>0){
-            return  health.get(0);
+        List<Health> health = healthMapper.isReport(id);
+        if (health.size() > 0) {
+            return health.get(0);
         }
         return null;
     }
 
     /**
      * 汇报历史记录
+     *
      * @return
      */
     @Override
-    public PageVO<Health> history(Long id,Integer pageNum,Integer pageSize) {
+    public PageVO<Health> history(Long id, Integer pageNum, Integer pageSize) {
         Example o = new Example(Health.class);
         o.setOrderByClause("create_time desc");
-        PageHelper.startPage(pageNum,pageSize);
-        o.createCriteria().andEqualTo("userId",id);
+        PageHelper.startPage(pageNum, pageSize);
+        o.createCriteria().andEqualTo("userId", id);
         List<Health> health = healthMapper.selectByExample(o);
-        PageInfo<Health> pageInfo=new PageInfo<>(health);
-        return new PageVO<>(pageInfo.getTotal(),pageInfo.getList());
+        PageInfo<Health> pageInfo = new PageInfo<>(health);
+        return new PageVO<>(pageInfo.getTotal(), pageInfo.getList());
     }
 }

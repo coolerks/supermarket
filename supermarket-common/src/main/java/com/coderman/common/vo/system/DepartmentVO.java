@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 public class DepartmentVO {
@@ -31,7 +31,9 @@ public class DepartmentVO {
     private Date modifiedTime;
 
 
-    /** 部门内人数**/
+    /**
+     * 部门内人数
+     **/
     private int total;
 
 }

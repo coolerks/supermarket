@@ -1,11 +1,11 @@
 package com.coderman.common.enums.system;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 
 
-public enum  RoleStatusEnum {
+public enum RoleStatusEnum {
     DISABLE(0),
     AVAILABLE(1);
 

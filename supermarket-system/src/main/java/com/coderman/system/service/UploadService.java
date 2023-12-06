@@ -9,10 +9,12 @@ import java.io.IOException;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public interface UploadService {
     String uploadImage(MultipartFile file) throws IOException, SystemException; //图片上传
+
     List<ImageAttachment> findImageList(ImageAttachmentVO imageAttachmentVO); //图片列表
+
     void delete(Long id) throws SystemException; //删除图片
 }

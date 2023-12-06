@@ -32,7 +32,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
@@ -72,7 +72,7 @@ public class DepartmentServiceImpl implements DepartmentService {
                 DepartmentVO d = new DepartmentVO();
                 BeanUtils.copyProperties(department, d);
                 Example o1 = new Example(User.class);
-                o1.createCriteria().andEqualTo("departmentId",department.getId())
+                o1.createCriteria().andEqualTo("departmentId", department.getId())
                         .andNotEqualTo("type", UserTypeEnum.SYSTEM_ADMIN.getTypeCode());
                 d.setTotal(userMapper.selectCountByExample(o1));
                 departmentVOS.add(d);
@@ -104,11 +104,11 @@ public class DepartmentServiceImpl implements DepartmentService {
                 for (UserRole userRole : userRoleList) {
                     userIds.add(userRole.getUserId());
                 }
-                if(userIds.size()>0){
+                if (userIds.size() > 0) {
                     for (Long userId : userIds) {
                         User user = userMapper.selectByPrimaryKey(userId);
                         //所有可用的
-                        if(user!=null&&user.getStatus()== UserStatusEnum.AVAILABLE.getStatusCode()){
+                        if (user != null && user.getStatus() == UserStatusEnum.AVAILABLE.getStatusCode()) {
                             DeanVO deanVO = new DeanVO();
                             deanVO.setName(user.getUsername());
                             deanVO.setId(user.getId());
@@ -123,12 +123,13 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     /**
      * 添加院系
+     *
      * @param departmentVO
      */
     @Override
     public void add(DepartmentVO departmentVO) {
         Department department = new Department();
-        BeanUtils.copyProperties(departmentVO,department);
+        BeanUtils.copyProperties(departmentVO, department);
         department.setCreateTime(new Date());
         department.setModifiedTime(new Date());
         departmentMapper.insert(department);
@@ -136,31 +137,33 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     /**
      * 编辑院系
+     *
      * @param id
      * @return
      */
     @Override
     public DepartmentVO edit(Long id) throws SystemException {
         Department department = departmentMapper.selectByPrimaryKey(id);
-        if(department==null){
-            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"编辑的部门不存在");
+        if (department == null) {
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR, "编辑的部门不存在");
         }
         return DepartmentConverter.converterToDepartmentVO(department);
     }
 
     /**
      * 更新部门
+     *
      * @param id
      * @param departmentVO
      */
     @Override
     public void update(Long id, DepartmentVO departmentVO) throws SystemException {
         Department dbDepartment = departmentMapper.selectByPrimaryKey(id);
-        if(dbDepartment==null){
-            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要更新的部门不存在");
+        if (dbDepartment == null) {
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR, "要更新的部门不存在");
         }
         Department department = new Department();
-        BeanUtils.copyProperties(departmentVO,department);
+        BeanUtils.copyProperties(departmentVO, department);
         department.setId(id);
         department.setModifiedTime(new Date());
         departmentMapper.updateByPrimaryKeySelective(department);
@@ -168,13 +171,14 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     /**
      * 删除部门信息
+     *
      * @param id
      */
     @Override
     public void delete(Long id) throws SystemException {
         Department department = departmentMapper.selectByPrimaryKey(id);
-        if(department==null){
-            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR,"要删除的部门不存在");
+        if (department == null) {
+            throw new SystemException(SystemCodeEnum.PARAMETER_ERROR, "要删除的部门不存在");
         }
         departmentMapper.deleteByPrimaryKey(id);
     }
@@ -189,8 +193,8 @@ public class DepartmentServiceImpl implements DepartmentService {
                 DepartmentVO d = new DepartmentVO();
                 BeanUtils.copyProperties(department, d);
                 Example o = new Example(User.class);
-                o.createCriteria().andEqualTo("departmentId",department.getId())
-                .andNotEqualTo("type",0);
+                o.createCriteria().andEqualTo("departmentId", department.getId())
+                        .andNotEqualTo("type", 0);
                 d.setTotal(userMapper.selectCountByExample(o));
                 departmentVOS.add(d);
             }

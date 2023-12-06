@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Component
 public class OutStockConverter {
@@ -23,17 +23,18 @@ public class OutStockConverter {
 
     /**
      * 转voList
+     *
      * @param outStocks
      * @return
      */
-    public  List<OutStockVO> converterToVOList(List<OutStock> outStocks) {
-        List<OutStockVO> outStockVOS=new ArrayList<>();
-        if(!CollectionUtils.isEmpty(outStocks)){
+    public List<OutStockVO> converterToVOList(List<OutStock> outStocks) {
+        List<OutStockVO> outStockVOS = new ArrayList<>();
+        if (!CollectionUtils.isEmpty(outStocks)) {
             for (OutStock outStock : outStocks) {
                 OutStockVO outStockVO = new OutStockVO();
-                BeanUtils.copyProperties(outStock,outStockVO);
+                BeanUtils.copyProperties(outStock, outStockVO);
                 Consumer consumer = consumerMapper.selectByPrimaryKey(outStock.getConsumerId());
-                if(consumer!=null){
+                if (consumer != null) {
                     outStockVO.setName(consumer.getName());
                     outStockVO.setPhone(consumer.getPhone());
                 }

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "业务模块-商品资料相关接口")
 @RestController
@@ -31,6 +31,7 @@ public class ProductController {
 
     /**
      * 全部商品列表
+     *
      * @return
      */
     @ApiOperation(value = "商品列表", notes = "商品列表,根据商品名模糊查询")
@@ -46,6 +47,7 @@ public class ProductController {
 
     /**
      * 可入库商品(入库页面使用)
+     *
      * @return
      */
     @ApiOperation(value = "可入库商品列表", notes = "商品列表,根据商品名模糊查询")
@@ -53,7 +55,7 @@ public class ProductController {
     public ResponseBean findProducts(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                      @RequestParam(value = "pageSize") Integer pageSize,
                                      @RequestParam(value = "categorys", required = false) String categorys,
-                                     ProductVO productVO){
+                                     ProductVO productVO) {
         productVO.setStatus(0);
         buildCategorySearch(categorys, productVO);
         PageVO<ProductVO> productVOPageVO = productService.findProductList(pageNum, pageSize, productVO);
@@ -62,14 +64,15 @@ public class ProductController {
 
     /**
      * 库存列表
+     *
      * @return
      */
     @ApiOperation(value = "库存列表", notes = "商品列表,根据商品名模糊查询")
     @GetMapping("/findProductStocks")
     public ResponseBean findProductStocks(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
-                                        @RequestParam(value = "pageSize") Integer pageSize,
-                                        @RequestParam(value = "categorys", required = false) String categorys,
-                                        ProductVO productVO) {
+                                          @RequestParam(value = "pageSize") Integer pageSize,
+                                          @RequestParam(value = "categorys", required = false) String categorys,
+                                          ProductVO productVO) {
 
         buildCategorySearch(categorys, productVO);
         PageVO<ProductStockVO> productVOPageVO = productService.findProductStocks(pageNum, pageSize, productVO);
@@ -77,9 +80,9 @@ public class ProductController {
     }
 
 
-
     /**
      * 所有库存(饼图使用)
+     *
      * @return
      */
     @ApiOperation(value = "全部库存", notes = "商品所有库存信息,饼图使用")
@@ -89,14 +92,14 @@ public class ProductController {
                                       @RequestParam(value = "categorys", required = false) String categorys,
                                       ProductVO productVO) {
         buildCategorySearch(categorys, productVO);
-        List<ProductStockVO> list = productService.findAllStocks(pageNum, pageSize,productVO);
+        List<ProductStockVO> list = productService.findAllStocks(pageNum, pageSize, productVO);
         return ResponseBean.success(list);
     }
 
 
-
     /**
      * 封装商品查询条件
+     *
      * @param categorys
      * @param productVO
      */
@@ -123,6 +126,7 @@ public class ProductController {
 
     /**
      * 添加商品
+     *
      * @return
      */
     @ControllerEndpoint(exceptionMessage = "添加商品失败", operation = "商品资料添加")
@@ -131,7 +135,7 @@ public class ProductController {
     @PostMapping("/add")
     public ResponseBean add(@RequestBody @Validated ProductVO productVO) throws BusinessException {
         if (productVO.getCategoryKeys().length != 3) {
-            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"商品需要3级分类");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "商品需要3级分类");
         }
         productService.add(productVO);
         return ResponseBean.success();
@@ -139,6 +143,7 @@ public class ProductController {
 
     /**
      * 编辑商品
+     *
      * @param id
      * @return
      */
@@ -161,7 +166,7 @@ public class ProductController {
     @PutMapping("/update/{id}")
     public ResponseBean update(@PathVariable Long id, @RequestBody ProductVO productVO) throws BusinessException {
         if (productVO.getCategoryKeys().length != 3) {
-            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR,"商品需要3级分类");
+            throw new BusinessException(BusinessCodeEnum.PARAMETER_ERROR, "商品需要3级分类");
         }
         productService.update(id, productVO);
         return ResponseBean.success();
@@ -169,6 +174,7 @@ public class ProductController {
 
     /**
      * 删除商品
+     *
      * @param id
      * @return
      */
@@ -182,9 +188,9 @@ public class ProductController {
     }
 
 
-
     /**
      * 移入回收站
+     *
      * @param id
      * @return
      */
@@ -196,8 +202,10 @@ public class ProductController {
         productService.remove(id);
         return ResponseBean.success();
     }
+
     /**
      * 商品添加审核
+     *
      * @param id
      * @return
      */
@@ -209,8 +217,10 @@ public class ProductController {
         productService.publish(id);
         return ResponseBean.success();
     }
+
     /**
      * 恢复数据从回收站
+     *
      * @param id
      * @return
      */

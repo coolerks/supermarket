@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 去向管理
  *
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Api(tags = "业务模块-商品去向相关接口")
 @RestController

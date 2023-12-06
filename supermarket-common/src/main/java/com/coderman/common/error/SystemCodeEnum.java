@@ -1,17 +1,20 @@
 package com.coderman.common.error;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
-public enum SystemCodeEnum  implements BaseError {
-    PARAMETER_ERROR(50000,"参数不合法"),
-    TOKEN_ERROR(50001,"用户未认证")
-    ;
+public enum SystemCodeEnum implements BaseError {
+    PARAMETER_ERROR(50000, "参数不合法"),
+    TOKEN_ERROR(50001, "用户未认证");
 
-    /** 错误码 */
+    /**
+     * 错误码
+     */
     private int errorCode;
 
-    /** 错误描述 */
+    /**
+     * 错误描述
+     */
     private String errorMsg;
 
     SystemCodeEnum(int errorCode, String errorMsg) {
@@ -31,7 +34,7 @@ public enum SystemCodeEnum  implements BaseError {
 
     @Override
     public BaseError setErrorMsg(String errorMsg) {
-        this.errorMsg=errorMsg;
+        this.errorMsg = errorMsg;
         return this;
     }
 }

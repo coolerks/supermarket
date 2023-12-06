@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Configuration
 @EnableSwagger2
@@ -49,7 +49,7 @@ public class SwaggerConfig {
     }
 
     private List<SecurityContext> securityContexts() {
-        List<SecurityContext> securityContexts=new ArrayList<>();
+        List<SecurityContext> securityContexts = new ArrayList<>();
         securityContexts.add(
                 SecurityContext.builder()
                         .securityReferences(defaultAuth())
@@ -62,7 +62,7 @@ public class SwaggerConfig {
         AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
         AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
         authorizationScopes[0] = authorizationScope;
-        List<SecurityReference> securityReferences=new ArrayList<>();
+        List<SecurityReference> securityReferences = new ArrayList<>();
         securityReferences.add(new SecurityReference("Authorization", authorizationScopes));
         return securityReferences;
     }

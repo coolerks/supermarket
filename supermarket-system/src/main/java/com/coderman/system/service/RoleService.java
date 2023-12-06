@@ -9,12 +9,13 @@ import com.coderman.common.vo.system.RoleVO;
 import java.util.List;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 public interface RoleService {
 
     /**
      * 角色列表
+     *
      * @param pageNum
      * @param pageSize
      * @param roleVO
@@ -24,18 +25,21 @@ public interface RoleService {
 
     /**
      * 添加角色
+     *
      * @param roleVO
      */
     void add(RoleVO roleVO) throws SystemException;
 
     /**
      * 删除角色
+     *
      * @param id
      */
     void deleteById(Long id) throws SystemException;
 
     /**
      * 编辑角色
+     *
      * @param id
      * @return
      */
@@ -43,6 +47,7 @@ public interface RoleService {
 
     /**
      * 更新角色
+     *
      * @param id
      * @param roleVO
      */
@@ -50,6 +55,7 @@ public interface RoleService {
 
     /**
      * 根据角色状态
+     *
      * @param id
      * @param status
      */
@@ -57,12 +63,14 @@ public interface RoleService {
 
     /**
      * 查询所有的角色
+     *
      * @return
      */
     List<Role> findAll();
 
     /**
      * 查询角色拥有的菜单权限id
+     *
      * @param id
      * @return
      */
@@ -70,7 +78,8 @@ public interface RoleService {
 
     /**
      * 角色授权
+     *
      * @param mids
      */
-    void authority(Long id,Long[] mids) throws SystemException;
+    void authority(Long id, Long[] mids) throws SystemException;
 }

@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 public class ConsumerVO {
@@ -32,7 +32,7 @@ public class ConsumerVO {
     private String phone;
 
     @NotNull(message = "排序号不能为空")
-    private  Integer sort;
+    private Integer sort;
 
     @NotBlank(message = "联系人姓名不能为空")
     private String contact;

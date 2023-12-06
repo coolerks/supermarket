@@ -35,7 +35,7 @@ public class Consumer {
     /**
      * 排序
      */
-    private  Integer sort;
+    private Integer sort;
 
     /**
      * 联系人姓名

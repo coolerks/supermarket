@@ -12,7 +12,7 @@ import java.util.List;
  * 系统日志
  * Created by SongXiaoxu on 2019/11/15 17:26
  */
-public interface LogService  {
+public interface LogService {
 
     /**
      * 异步保存操作日志
@@ -23,6 +23,7 @@ public interface LogService  {
 
     /**
      * 删除登入日志
+     *
      * @param id
      */
     void delete(Long id) throws SystemException;
@@ -30,6 +31,7 @@ public interface LogService  {
 
     /**
      * 登入日志列表
+     *
      * @param pageNum
      * @param pageSize
      * @param logVO
@@ -39,6 +41,7 @@ public interface LogService  {
 
     /**
      * 批量删除登入日志
+     *
      * @param list
      */
     void batchDelete(List<Long> list) throws SystemException;

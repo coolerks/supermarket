@@ -7,14 +7,14 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
-  * @Date 2023年12月 * @Version 1.0
+ * @Date 2023年12月 * @Version 1.0
  **/
 @Data
 public class HealthVO {
 
     private Long id;
 
-    @NotBlank(message="地址不能为空")
+    @NotBlank(message = "地址不能为空")
     private String address;
 
     private Long userId;

@@ -1,7 +1,6 @@
 package com.coderman.system.shiro;
 
 import com.coderman.common.error.SystemCodeEnum;
-import com.coderman.common.error.SystemException;
 import com.coderman.common.response.ResponseBean;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +28,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 
     /**
      * 认证之前执行该方法
+     *
      * @param request
      * @param response
      * @param mappedValue
@@ -37,24 +37,25 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         Subject subject = SecurityUtils.getSubject();
-        return  null != subject && subject.isAuthenticated();
+        return null != subject && subject.isAuthenticated();
     }
 
     /**
      * 认证未通过执行该方法
+     *
      * @param request
      * @param response
      * @return
      */
     @Override
-    protected boolean onAccessDenied(ServletRequest request, ServletResponse response){
+    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) {
         //完成token登入
         //1.检查请求头中是否含有token
-        HttpServletRequest httpServletRequest= (HttpServletRequest) request;
+        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         String token = httpServletRequest.getHeader("Authorization");
         //2. 如果客户端没有携带token，拦下请求
-        if(null==token||"".equals(token)){
-            responseTokenError(response,"Token无效，您无权访问该接口");
+        if (null == token || "".equals(token)) {
+            responseTokenError(response, "Token无效，您无权访问该接口");
             return false;
         }
         //3. 如果有，对进行进行token验证
@@ -63,7 +64,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
             SecurityUtils.getSubject().login(jwtToken);
         } catch (AuthenticationException e) {
             log.error(e.getMessage());
-            responseTokenError(response,e.getMessage());
+            responseTokenError(response, e.getMessage());
             return false;
         }
 
@@ -87,6 +88,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         }
         return super.preHandle(request, response);
     }
+
     /**
      * 无需转发，直接返回Response信息 Token认证错误
      */
@@ -98,7 +100,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         try (PrintWriter out = httpServletResponse.getWriter()) {
             HashMap<String, Object> errorData = new HashMap<>();
             errorData.put("errorCode", SystemCodeEnum.TOKEN_ERROR.getErrorCode());
-            errorData.put("errorMsg",SystemCodeEnum.TOKEN_ERROR.getErrorMsg());
+            errorData.put("errorMsg", SystemCodeEnum.TOKEN_ERROR.getErrorMsg());
             ResponseBean<HashMap<String, Object>> result = ResponseBean.error(errorData);
             String data = new Gson().toJson(result);
             out.append(data);
